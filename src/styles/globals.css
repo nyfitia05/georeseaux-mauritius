@@ -157,3 +157,11 @@ footer.wl-footer .wlf-phone:hover { filter: brightness(0.93); }
   footer.wl-footer .wlf-legal p { text-align: center !important; }
   footer.wl-footer .wlf-links { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 6px 22px; }
 }
+
+footer.wl-footer .wlf-contact { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+footer.wl-footer .wlf-email {
+  display: inline-flex; align-items: center; gap: 7px; text-decoration: none;
+  font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 300; color: #1a1a1a;
+}
+footer.wl-footer .wlf-email:hover { color: #5a5b6e; }
+footer.wl-footer .wlf-email svg { width: 16px; height: 16px; flex: none; }

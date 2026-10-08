@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { Mail, Phone } from "lucide-react";
 import { brand, footer } from "@/data/content";
 import { t } from "@/lib/lang";
 
@@ -45,8 +46,17 @@ export function Footer() {
       </ul>
 
       <div className="wlf-contact">
-        <a href={brand.phoneHref} className="wlf-phone">
+        {/* Même bouton que celui de l'en-tête (Navbar), à l'identique. */}
+        <a
+          href={brand.phoneHref}
+          className="flex items-center gap-2 whitespace-nowrap rounded-full bg-yellow-500 px-4 py-2.5 text-sm font-bold text-blue-900 transition-colors hover:bg-yellow-400"
+        >
+          <Phone className="h-4 w-4" strokeWidth={2.5} aria-hidden />
           {brand.phone}
+        </a>
+        <a href={brand.emailHref} className="wlf-email">
+          <Mail aria-hidden />
+          {brand.email}
         </a>
       </div>
     </footer>
