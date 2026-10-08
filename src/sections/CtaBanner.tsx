@@ -2,6 +2,7 @@ import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { cn } from "@/lib/utils";
+import { splitSentences } from "@/lib/textMarkup";
 import { brand } from "@/data/content";
 import { t } from "@/lib/lang";
 
@@ -52,7 +53,14 @@ export function CtaBanner({
         </Reveal>
         {subtitle && (
           <Reveal delay={0.08}>
-            <p className={cn("max-w-2xl text-base", dark ? "text-blue-100" : "text-ink-soft")}>{subtitle}</p>
+            <p className={cn("max-w-2xl text-base", dark ? "text-blue-100" : "text-ink-soft")}>
+              {/* Une phrase par ligne (demande du client, 08/10/2026). */}
+              {splitSentences(subtitle).map((sentence, index) => (
+                <span key={index} className="block">
+                  {sentence}
+                </span>
+              ))}
+            </p>
           </Reveal>
         )}
         <Reveal delay={0.16} className="flex flex-col items-center gap-3">
