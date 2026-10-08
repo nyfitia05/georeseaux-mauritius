@@ -126,19 +126,19 @@ footer.wl-footer .wlf-logo { display: block; line-height: 0; max-width: 100%; }
 footer.wl-footer .wlf-logo img { width: 250px; max-width: 100%; height: auto; display: block; margin: 0; }
 footer.wl-footer .wlf-addr {
   margin: 10px 0 0 !important; font-style: normal; font-family: 'Poppins', sans-serif;
-  font-size: 15px !important; line-height: 1.5 !important; font-weight: 400; color: #333; text-align: center;
+  font-size: 15px !important; line-height: 1.5 !important; font-weight: 300; color: #333; text-align: center;
 }
 footer.wl-footer .wlf-legal p {
   margin: 0 !important; padding: 0; max-width: none !important;
   font-family: 'Poppins', sans-serif !important; font-size: 15px !important; line-height: 1.5 !important;
-  font-weight: 400 !important; color: #1a1a1a !important; text-align: left !important;
+  font-weight: 300 !important; color: #1a1a1a !important; text-align: left !important;
 }
 footer.wl-footer .wlf-legal strong { font-weight: 600; }
 footer.wl-footer .wlf-links { list-style: none !important; margin: 0 !important; padding: 0 !important; display: block !important; }
 footer.wl-footer .wlf-links li { margin: 0 !important; padding: 0 !important; font-size: 15px !important; line-height: 1.5 !important; list-style: none !important; }
 footer.wl-footer .wlf-links li::before { content: none !important; }
 footer.wl-footer .wlf-links a {
-  font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500;
+  font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600;
   color: #1a1a1a; text-decoration: none; transition: color .2s;
 }
 footer.wl-footer .wlf-links a:hover { color: #5a5b6e; }
