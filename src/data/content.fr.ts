@@ -40,10 +40,10 @@ export const brand = {
 export const footer = {
   address: ["Grand Baie – Île Maurice", "Océan Indien"],
   links: [
+    { label: "Group", href: "https://waterleakgroup.com/" },
     { label: "Academy", href: "https://waterleakacademy.com/" },
     { label: "Expert", href: "https://waterleakexpert.com/" },
     { label: "Equipment", href: "https://waterleakequipment.com/" },
-    { label: "Georeseaux", href: "https://georeseauxmauritius.com/" },
   ],
 };
 

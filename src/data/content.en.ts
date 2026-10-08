@@ -20,10 +20,10 @@ export const brand: typeof FR.brand = {
 export const footer: typeof FR.footer = {
   address: ["Grand Baie – Mauritius", "Indian Ocean"],
   links: [
+    { label: "Group", href: "https://waterleakgroup.com/" },
     { label: "Academy", href: "https://waterleakacademy.com/" },
     { label: "Expert", href: "https://waterleakexpert.com/" },
     { label: "Equipment", href: "https://waterleakequipment.com/" },
-    { label: "Georeseaux", href: "https://georeseauxmauritius.com/" },
   ],
 };
 
