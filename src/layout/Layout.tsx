@@ -20,10 +20,13 @@ export function Layout() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className={showStickyCta ? "flex-1 pb-20 lg:pb-0" : "flex-1"}>
+      <main className="flex-1">
         <Outlet />
       </main>
       <Footer />
+      {/* Espace sous le footer sur mobile, pour que la barre "Demander un
+         devis" fixée en bas de l'écran ne cache pas le bas du footer. */}
+      {showStickyCta && <div className="h-20 lg:hidden" aria-hidden />}
       {showStickyCta && <MobileStickyCta />}
     </div>
   );

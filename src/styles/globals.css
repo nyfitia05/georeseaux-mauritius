@@ -102,3 +102,58 @@
   background: #b9c8eb;
   border-radius: 999px;
 }
+
+/* ══ FOOTER COMMUN WATER LEAK (même modèle sur tous les sites) ══
+   Logo + adresse | TAN / BRN / société | liens | téléphone.
+   Couleur du bouton propre à chaque site : --wlf-btn / --wlf-btn-text. */
+footer.wl-footer {
+  display: grid !important;
+  grid-template-columns: auto auto auto auto !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 32px !important;
+  padding: 30px 6vw !important;
+  margin: 0 !important;
+  background: #ffffff !important;
+  border-top: 1px solid #ececec;
+  text-align: left !important;
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+}
+footer.wl-footer * { box-sizing: border-box; }
+footer.wl-footer .wlf-brand { display: flex; flex-direction: column; align-items: center; text-align: center; }
+footer.wl-footer .wlf-logo { display: block; line-height: 0; max-width: 100%; }
+footer.wl-footer .wlf-logo img { width: 250px; max-width: 100%; height: auto; display: block; margin: 0; }
+footer.wl-footer .wlf-addr {
+  margin: 10px 0 0 !important; font-style: normal; font-family: 'Poppins', sans-serif;
+  font-size: 15px !important; line-height: 1.5 !important; font-weight: 400; color: #333; text-align: center;
+}
+footer.wl-footer .wlf-legal p {
+  margin: 0 !important; padding: 0; max-width: none !important;
+  font-family: 'Poppins', sans-serif !important; font-size: 15px !important; line-height: 1.5 !important;
+  font-weight: 400 !important; color: #1a1a1a !important; text-align: left !important;
+}
+footer.wl-footer .wlf-legal strong { font-weight: 600; }
+footer.wl-footer .wlf-links { list-style: none !important; margin: 0 !important; padding: 0 !important; display: block !important; }
+footer.wl-footer .wlf-links li { margin: 0 !important; padding: 0 !important; font-size: 15px !important; line-height: 1.5 !important; list-style: none !important; }
+footer.wl-footer .wlf-links li::before { content: none !important; }
+footer.wl-footer .wlf-links a {
+  font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500;
+  color: #1a1a1a; text-decoration: none; transition: color .2s;
+}
+footer.wl-footer .wlf-links a:hover { color: #5a5b6e; }
+footer.wl-footer .wlf-phone {
+  display: inline-block; white-space: nowrap; text-decoration: none;
+  background: var(--wlf-btn) !important; color: var(--wlf-btn-text) !important;
+  font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600;
+  padding: 12px 34px; border-radius: 60px; transition: filter .2s;
+}
+footer.wl-footer .wlf-phone:hover { filter: brightness(0.93); }
+@media (max-width: 1100px) {
+  footer.wl-footer { grid-template-columns: 1fr 1fr !important; justify-content: stretch !important; justify-items: center !important; gap: 28px 40px !important; }
+}
+@media (max-width: 700px) {
+  footer.wl-footer { grid-template-columns: minmax(0, 1fr) !important; text-align: center !important; padding: 30px 20px !important; gap: 22px !important; }
+  footer.wl-footer .wlf-legal p { text-align: center !important; }
+  footer.wl-footer .wlf-links { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 6px 22px; }
+}
