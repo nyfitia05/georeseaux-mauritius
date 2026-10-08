@@ -11,10 +11,11 @@ import { EASE_SIGNATURE } from "@/animations/variants";
 import { devisAccueil, devis } from "@/data/content";
 import { renderEmailSections, type EmailSection } from "@/lib/emailTemplate";
 import { sendDevisEmail } from "@/lib/sendEmail";
+import { lang, t } from "@/lib/lang";
 
 type Status = "idle" | "submitting" | "sent";
 
-const AUTRE = "Autre";
+const AUTRE = t("Autre", "Other");
 
 /** Même vocabulaire visuel que StepLegend dans Devis.tsx (badge numéroté +
  * légende) — dupliqué ici plutôt que partagé car les deux formulaires
@@ -46,7 +47,7 @@ function AutrePrecision({
   if (!visible) return null;
   return (
     <div className="mt-4">
-      <FormField label="Précisez" name={name} value={value} onChange={(e) => onChange(e.target.value)} />
+      <FormField label={t("Précisez", "Please specify")} name={name} value={value} onChange={(e) => onChange(e.target.value)} />
     </div>
   );
 }
@@ -79,7 +80,7 @@ export function HomeDevisForm() {
     // ne voyait absolument rien se passer. On affiche maintenant une erreur
     // explicite au lieu de sortir en silence.
     if (!besoin) {
-      setError("Merci de sélectionner une option dans « 03 — Votre besoin » avant d'envoyer votre demande.");
+      setError(t("Merci de sélectionner une option dans « 03 — Votre besoin » avant d'envoyer votre demande.", "Please select an option in “03 — Your needs” before sending your request."));
       return;
     }
 
@@ -94,7 +95,7 @@ export function HomeDevisForm() {
     const get = (name: string) => (formData.get(name) as string) || "—";
     const list = (values: string[]) => (values.length === 0 ? "—" : values.join(", "));
     const single = (value: string | null, autre: string) =>
-      value === AUTRE && autre ? `Autre (${autre})` : value || "—";
+      value === AUTRE && autre ? `${AUTRE} (${autre})` : value || "—";
 
     setError(null);
     setStatus("submitting");
@@ -146,7 +147,7 @@ export function HomeDevisForm() {
     ];
 
     const result = await sendDevisEmail({
-      subject: `Nouvelle demande de devis — ${single(besoin, besoinAutre)} (page d'accueil)`,
+      subject: `Nouvelle demande de devis${lang === "en" ? " (client anglophone)" : ""} — ${single(besoin, besoinAutre)} (page d'accueil)`,
       from_name: "Formulaire GEORESEAUX MAURITIUS — Page d'accueil",
       reply_to: get("email"),
       sections_html: renderEmailSections(sections),
@@ -158,8 +159,8 @@ export function HomeDevisForm() {
       setStatus("idle");
       setError(
         result.error === "missing_config"
-          ? "Le formulaire n'est pas encore configuré (identifiants EmailJS manquants). Contactez GEORESEAUX MAURITIUS directement en attendant."
-          : "L'envoi a échoué. Vérifiez votre connexion et réessayez, ou contactez GEORESEAUX MAURITIUS directement si le problème persiste.",
+          ? t("Le formulaire n'est pas encore configuré (identifiants EmailJS manquants). Contactez GEORESEAUX MAURITIUS directement en attendant.", "The form is not configured yet. Please contact GEORESEAUX MAURITIUS directly in the meantime.")
+          : t("L'envoi a échoué. Vérifiez votre connexion et réessayez, ou contactez GEORESEAUX MAURITIUS directement si le problème persiste.", "Sending failed. Please check your connection and try again, or contact GEORESEAUX MAURITIUS directly if the problem persists."),
       );
     }
   };
@@ -273,7 +274,7 @@ export function HomeDevisForm() {
                   {status === "submitting" ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-                      Envoi…
+                      {t("Envoi…", "Sending…")}
                     </>
                   ) : (
                     devis.submit

@@ -9,6 +9,7 @@ import { PlateauTechnique } from "@/sections/PlateauTechnique";
 import { SolutionDigitale } from "@/sections/SolutionDigitale";
 import { CtaBanner } from "@/sections/CtaBanner";
 import { home, nav, pillars, positioning } from "@/data/content";
+import { t } from "@/lib/lang";
 
 // Les 2 cartes juste sous le hero (Détection, Cartographie — la carte
 // Monitoring a été retirée le 08/10/2026, le monitoring passant sur le site
@@ -97,7 +98,7 @@ export default function Home() {
       <SolutionDigitale
         {...home.restitution}
         image="/img/accueil/restitution.png"
-        imageAlt="Exemple de restitution GEORESEAUX MAURITIUS"
+        imageAlt={t("Exemple de restitution GEORESEAUX MAURITIUS", "Example of a GEORESEAUX MAURITIUS deliverable")}
       />
 
       {/* Bandeau de clôture — texte exact de la plaquette ("Parlez-nous de

@@ -8,18 +8,20 @@ import { CtaBanner } from "@/sections/CtaBanner";
 import { motion } from "framer-motion";
 import { EASE_SIGNATURE, staggerContainer, viewport } from "@/animations/variants";
 import { detection, nav } from "@/data/content";
+import { t } from "@/lib/lang";
 
 // Photos terrain fournies par le client (public/img/detection/*.png),
 // associées par titre aux 4 technologies — texte jamais modifié, seule
 // l'illustration change. "Inspection et repérage des ouvrages" reprend la
 // photo déjà utilisée pour l'ancien intitulé "Observation terrain" (même
 // sujet, seul le libellé de la brochure diffère).
-const technologyImages: Record<string, string> = {
-  "Géoradar": "/img/detection/georadar.png",
-  "Détection électromagnétique": "/img/detection/detection-ele.png",
-  "Sondes traçables": "/img/detection/sonde.png",
-  "Inspection et repérage des ouvrages": "/img/detection/observation.png",
-};
+// Images dans le même ordre que detection.technologies.items (FR et EN).
+const technologyImages = [
+  "/img/detection/georadar.png",
+  "/img/detection/detection-ele.png",
+  "/img/detection/sonde.png",
+  "/img/detection/observation.png",
+];
 
 // Variante "déroulé" pour les cartes photo ci-dessous : propagée depuis le
 // <motion.ul> parent (variants + whileInView sur la liste, pas sur chaque
@@ -47,7 +49,7 @@ export default function Detection() {
       <Seo title={detection.seo.title} />
       <PageHero
         h1={detection.hero.h1}
-        accent={["vos réseaux enterrés"]}
+        accent={[t("vos réseaux enterrés", "underground networks")]}
         image="/img/accueil/detection-hero.png"
         align="center"
       />
@@ -68,14 +70,14 @@ export default function Detection() {
             viewport={viewport}
             className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
           >
-            {detection.technologies.items.map((item) => (
+            {detection.technologies.items.map((item, index) => (
               <motion.li
                 key={item.title}
                 variants={unrollItem}
                 className="group relative h-72 overflow-hidden rounded-sm"
               >
                 <img
-                  src={technologyImages[item.title]}
+                  src={technologyImages[index]}
                   alt={item.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -94,7 +96,7 @@ export default function Detection() {
       <SolutionDigitale
         {...detection.rapport}
         image="/img/detection/rapport-intervention.png"
-        imageAlt="Exemple de rapport d'intervention GEORESEAUX MAURITIUS"
+        imageAlt={t("Exemple de rapport d'intervention GEORESEAUX MAURITIUS", "Example of a GEORESEAUX MAURITIUS intervention report")}
       />
 
       <CtaBanner label={detection.cta} to={nav.devisCta.href} heading={detection.tagline} withCallback={false} />

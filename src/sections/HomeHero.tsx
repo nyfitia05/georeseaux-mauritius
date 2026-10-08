@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/Container";
 import { EASE_SIGNATURE } from "@/animations/variants";
 import { home } from "@/data/content";
+import { lang } from "@/lib/lang";
 
 // The H1 is split into two visual lines to match the line break used on the
 // reference GEORESEAUX FRANCE brochure exactly ("Détecter. Localiser." /
@@ -9,7 +10,7 @@ import { home } from "@/data/content";
 // treatment for the full-bleed photo hero. The brochure's second line is
 // entirely in yellow (not a single accent word), so it gets its own color
 // instead of going through the usual word-level accent helper.
-const headlineLines = ["Détecter. Localiser.", "Cartographier. Surveiller."];
+const headlineLines = lang === "en" ? ["Detect. Locate.", "Map. Monitor."] : ["Détecter. Localiser.", "Cartographier. Surveiller."];
 
 const stage = (delay: number) => ({
   initial: { opacity: 0, y: 24 },

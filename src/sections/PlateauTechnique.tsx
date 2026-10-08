@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/Button";
 import { plateauTechnique, nav } from "@/data/content";
+import { t } from "@/lib/lang";
 
 /**
  * "Plateau technique" — bloc repris à l'identique (photo + texte) sur les 4
@@ -29,7 +30,7 @@ export function PlateauTechnique() {
              agent-support.png sur toutes les pages. */}
           <img
             src="/img/global/agent-support.png"
-            alt="Conseiller GEORESEAUX MAURITIUS au téléphone"
+            alt={t("Conseiller GEORESEAUX MAURITIUS au téléphone", "GEORESEAUX MAURITIUS advisor on the phone")}
             className="absolute inset-0 h-full w-full object-cover"
           />
         </div>

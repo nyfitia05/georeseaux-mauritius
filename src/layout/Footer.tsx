@@ -1,5 +1,6 @@
 import { Mail, Phone } from "lucide-react";
 import { brand, footer } from "@/data/content";
+import { t } from "@/lib/lang";
 
 /** Pied de page aligné sur les autres sites Water Leak (Group, Expert,
  * Academy, Equipment) : logo et adresse à gauche, liens vers les entités du
@@ -20,7 +21,7 @@ export function Footer() {
           </address>
         </div>
 
-        <nav aria-label="Sites du groupe Water Leak">
+        <nav aria-label={t("Sites du groupe Water Leak", "Water Leak group websites")}>
           <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
             {footer.links.map((link) => (
               <li key={link.label}>

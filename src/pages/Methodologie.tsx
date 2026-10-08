@@ -4,15 +4,16 @@ import { PageHero } from "@/sections/PageHero";
 import { MethodologyPath } from "@/sections/MethodologyPath";
 import { CtaBanner } from "@/sections/CtaBanner";
 import { methodologie, nav } from "@/data/content";
+import { lang, t } from "@/lib/lang";
 
 export default function Methodologie() {
   return (
     <>
       <Seo title={methodologie.seo.title} />
       <PageHero
-        eyebrow="Méthodologie"
+        eyebrow={t("Méthodologie", "Methodology")}
         h1={methodologie.hero.h1}
-        accent={["analyse", "restitution"]}
+        accent={lang === "en" ? ["needs analysis", "final delivery"] : ["analyse", "restitution"]}
         align="center"
       />
 
@@ -22,7 +23,7 @@ export default function Methodologie() {
         </Container>
       </section>
 
-      <CtaBanner label="Demander un devis" to={nav.devisCta.href} />
+      <CtaBanner label={t("Demander un devis", "Request a quote")} to={nav.devisCta.href} />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { cn } from "@/lib/utils";
 import { brand } from "@/data/content";
+import { t } from "@/lib/lang";
 
 interface CtaBannerProps {
   label: string;
@@ -61,7 +62,7 @@ export function CtaBanner({
             </Button>
             {withCallback && (
               <Button to={to} variant="ghost" className={dark ? "text-white" : "text-blue-700"}>
-                Être rappelé
+                {t("Être rappelé", "Request a call back")}
               </Button>
             )}
           </div>

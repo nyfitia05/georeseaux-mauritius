@@ -3,6 +3,8 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/Button";
+import { LangSwitch } from "@/components/LangSwitch";
+import { t } from "@/lib/lang";
 import { cn } from "@/lib/utils";
 import { brand, nav } from "@/data/content";
 
@@ -33,7 +35,7 @@ export function Navbar() {
         {/* Le lien garde h-14 / sm:h-16 (hauteur du header compensée par
            PageHero) ; le logo est plus petit à l'intérieur. */}
         <Link to="/" className="flex h-14 shrink-0 items-center sm:h-16">
-          <img src="/img/Logolong.png" alt={brand.name} className="h-10 w-auto sm:h-11" />
+          <img src="/img/Logolong.png" alt={brand.name} className="h-10 w-auto max-w-[52vw] object-contain sm:h-11 sm:max-w-none" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -98,7 +100,8 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
+          <LangSwitch />
           {/* Pastille téléphone jaune, cf. maquette de référence — remplace le
              bouton "Demander un devis" dans le header (retiré à la demande du
              client, conservé plus bas dans le menu mobile et ailleurs sur le
@@ -113,14 +116,16 @@ export function Navbar() {
           </a>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          className="lg:hidden"
-        >
-          {mobileOpen ? <X className="h-6 w-6 text-blue-700" /> : <Menu className="h-6 w-6 text-blue-700" />}
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <LangSwitch />
+          <button
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label={mobileOpen ? t("Fermer le menu", "Close menu") : t("Ouvrir le menu", "Open menu")}
+          >
+            {mobileOpen ? <X className="h-6 w-6 text-blue-700" /> : <Menu className="h-6 w-6 text-blue-700" />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

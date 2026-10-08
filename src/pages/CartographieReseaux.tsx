@@ -6,6 +6,7 @@ import { PlateauTechnique } from "@/sections/PlateauTechnique";
 import { SolutionDigitale } from "@/sections/SolutionDigitale";
 import { CtaBanner } from "@/sections/CtaBanner";
 import { releves, nav } from "@/data/content";
+import { t } from "@/lib/lang";
 
 // Page réécrite en septembre 2026 pour coller mot pour mot à la brochure
 // RELEVÉS_CARTOGRAPHIE.pdf : hero sans texte de corps, flow "Détection →
@@ -18,7 +19,7 @@ export default function CartographieReseaux() {
       <Seo title={releves.seo.title} />
       <PageHero
         h1={releves.hero.h1}
-        accent={["vos réseaux enterrés"]}
+        accent={[t("vos réseaux enterrés", "underground networks")]}
         image="/img/accueil/patrimonial.png"
         align="center"
       />
@@ -42,7 +43,7 @@ export default function CartographieReseaux() {
       <SolutionDigitale
         {...releves.cartographie}
         image="/img/carte.png"
-        imageAlt="Exemple de plan numérique des réseaux GEORESEAUX MAURITIUS"
+        imageAlt={t("Exemple de plan numérique des réseaux GEORESEAUX MAURITIUS", "Example of a GEORESEAUX MAURITIUS digital network plan")}
       />
 
       <CtaBanner label={releves.cta} to={nav.devisCta.href} heading={releves.tagline} withCallback={false} />

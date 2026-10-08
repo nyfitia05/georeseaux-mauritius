@@ -13,10 +13,11 @@ import { EASE_SIGNATURE } from "@/animations/variants";
 import { devis } from "@/data/content";
 import { renderEmailSections, type EmailSection } from "@/lib/emailTemplate";
 import { sendDevisEmail } from "@/lib/sendEmail";
+import { lang, t } from "@/lib/lang";
 
 type Status = "idle" | "submitting" | "sent";
 
-const AUTRE = "Autre";
+const AUTRE = t("Autre", "Other");
 
 /** Un badge numéroté + une légende — même vocabulaire visuel que les étapes
  * de MethodologyPath (cercle, chiffre, tracking large), repris ici en
@@ -52,7 +53,7 @@ function AutrePrecision({
   if (!visible) return null;
   return (
     <div className="mt-4">
-      <FormField label="Précisez" name={name} value={value} onChange={(e) => onChange(e.target.value)} />
+      <FormField label={t("Précisez", "Please specify")} name={name} value={value} onChange={(e) => onChange(e.target.value)} />
     </div>
   );
 }
@@ -88,7 +89,7 @@ export default function Devis() {
     // "Envoyer" et ne voyait rien se passer. Voir aussi HomeDevisForm.tsx,
     // même correction.
     if (!besoin) {
-      setError("Merci de sélectionner une option dans « 3. Votre besoin » avant d'envoyer votre demande.");
+      setError(t("Merci de sélectionner une option dans « 3. Votre besoin » avant d'envoyer votre demande.", "Please select an option in “3. Your needs” before sending your request."));
       return;
     }
 
@@ -105,9 +106,9 @@ export default function Devis() {
 
     const get = (name: string) => (formData.get(name) as string) || "—";
     const list = (values: string[], autre: string) =>
-      values.length === 0 ? "—" : values.map((v) => (v === AUTRE && autre ? `Autre (${autre})` : v)).join(", ");
+      values.length === 0 ? "—" : values.map((v) => (v === AUTRE && autre ? `${AUTRE} (${autre})` : v)).join(", ");
     const single = (value: string | null, autre: string) =>
-      value === AUTRE && autre ? `Autre (${autre})` : value || "—";
+      value === AUTRE && autre ? `${AUTRE} (${autre})` : value || "—";
 
     setError(null);
     setStatus("submitting");
@@ -160,7 +161,7 @@ export default function Devis() {
         heading: devis.documents.heading,
         rows: [
           { label: "Plans ou documents disponibles", value: aDesDocuments || "—" },
-          ...(aDesDocuments === "Oui"
+          ...(aDesDocuments === t("Oui", "Yes")
             ? [
                 { label: "Documents", value: list(documentsTypes, documentsAutre) },
                 { label: "Lien vers les documents", value: get("documentLink") },
@@ -189,7 +190,7 @@ export default function Devis() {
     ];
 
     const result = await sendDevisEmail({
-      subject: `Nouvelle demande de devis — ${single(besoin, besoinAutre)}`,
+      subject: `Nouvelle demande de devis${lang === "en" ? " (client anglophone)" : ""} — ${single(besoin, besoinAutre)}`,
       from_name: "Formulaire GEORESEAUX MAURITIUS — Préparer mon devis",
       reply_to: get("email"),
       sections_html: renderEmailSections(sections),
@@ -201,8 +202,8 @@ export default function Devis() {
       setStatus("idle");
       setError(
         result.error === "missing_config"
-          ? "Le formulaire n'est pas encore configuré (identifiants EmailJS manquants). Contactez GEORESEAUX MAURITIUS directement en attendant."
-          : "L'envoi a échoué. Vérifiez votre connexion et réessayez, ou contactez GEORESEAUX MAURITIUS directement si le problème persiste.",
+          ? t("Le formulaire n'est pas encore configuré (identifiants EmailJS manquants). Contactez GEORESEAUX MAURITIUS directement en attendant.", "The form is not configured yet. Please contact GEORESEAUX MAURITIUS directly in the meantime.")
+          : t("L'envoi a échoué. Vérifiez votre connexion et réessayez, ou contactez GEORESEAUX MAURITIUS directement si le problème persiste.", "Sending failed. Please check your connection and try again, or contact GEORESEAUX MAURITIUS directly if the problem persists."),
       );
     }
   };
@@ -210,7 +211,7 @@ export default function Devis() {
   return (
     <>
       <Seo title={devis.seo.title} />
-      <PageHero eyebrow="Préparer mon devis" h1={devis.hero.h1} accent={["devis"]} body={devis.hero.body} align="center" />
+      <PageHero eyebrow={devis.hero.h1} h1={devis.hero.h1} accent={[t("devis", "quote")]} body={devis.hero.body} align="center" />
 
       {/* pt réduit (au lieu de py-[35px] symétrique) : le hero a déjà 35px de
          padding bas, ce qui donnait ~70px de vide avant "01 Vos coordonnées"
@@ -333,11 +334,11 @@ export default function Devis() {
                     <p className="mb-4 text-sm font-medium text-ink">{devis.documents.question}</p>
                     <RadioCardGroup
                       name="aDesDocuments"
-                      options={["Oui", "Non"]}
+                      options={[t("Oui", "Yes"), t("Non", "No")]}
                       value={aDesDocuments}
                       onChange={setADesDocuments}
                     />
-                    {aDesDocuments === "Oui" && (
+                    {aDesDocuments === t("Oui", "Yes") && (
                       <div className="mt-6 space-y-6">
                         <CheckboxCardGroup
                           name="documentsTypes"
@@ -346,7 +347,7 @@ export default function Devis() {
                           onChange={setDocumentsTypes}
                         />
                         <AutrePrecision
-                          visible={documentsTypes.includes("Autre document")}
+                          visible={documentsTypes.includes(t("Autre document", "Other document"))}
                           name="documentsAutre"
                           value={documentsAutre}
                           onChange={setDocumentsAutre}
@@ -408,7 +409,7 @@ export default function Devis() {
                     {status === "submitting" ? (
                       <>
                         <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-                        Envoi…
+                        {t("Envoi…", "Sending…")}
                       </>
                     ) : (
                       devis.submit

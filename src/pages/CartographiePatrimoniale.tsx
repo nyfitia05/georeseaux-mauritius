@@ -6,15 +6,16 @@ import { FlowLine } from "@/components/FlowLine";
 import { PageHero } from "@/sections/PageHero";
 import { CtaBanner } from "@/sections/CtaBanner";
 import { cartographiePatrimoniale, nav } from "@/data/content";
+import { t } from "@/lib/lang";
 
 export default function CartographiePatrimoniale() {
   return (
     <>
       <Seo title={cartographiePatrimoniale.seo.title} />
       <PageHero
-        eyebrow="Cartographie patrimoniale"
+        eyebrow={t("Cartographie patrimoniale", "Asset mapping")}
         h1={cartographiePatrimoniale.hero.h1}
-        accent={["mémoire technique"]}
+        accent={[t("mémoire technique", "technical memory")]}
         body={cartographiePatrimoniale.hero.body}
         image="/img/accueil/patrimonial.png"
       />

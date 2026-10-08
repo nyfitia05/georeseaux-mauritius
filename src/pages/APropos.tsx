@@ -5,15 +5,16 @@ import { ListBlock } from "@/components/ListBlock";
 import { PageHero } from "@/sections/PageHero";
 import { CtaBanner } from "@/sections/CtaBanner";
 import { aPropos, nav } from "@/data/content";
+import { lang, t } from "@/lib/lang";
 
 export default function APropos() {
   return (
     <>
       <Seo title={aPropos.seo.title} />
       <PageHero
-        eyebrow="À propos"
+        eyebrow={t("À propos", "About")}
         h1={aPropos.hero.h1}
-        accent={["Connaître", "Sécuriser"]}
+        accent={lang === "en" ? ["Know", "Secure"] : ["Connaître", "Sécuriser"]}
         body={aPropos.hero.body}
         align="center"
         wide
@@ -28,7 +29,7 @@ export default function APropos() {
         </Container>
       </section>
 
-      <CtaBanner label="Demander un devis" to={nav.devisCta.href} />
+      <CtaBanner label={t("Demander un devis", "Request a quote")} to={nav.devisCta.href} />
     </>
   );
 }

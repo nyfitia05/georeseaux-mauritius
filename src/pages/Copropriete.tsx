@@ -9,12 +9,13 @@ import { PlateauTechnique } from "@/sections/PlateauTechnique";
 import { SolutionDigitale } from "@/sections/SolutionDigitale";
 import { CtaBanner } from "@/sections/CtaBanner";
 import { copropriete, detection, nav } from "@/data/content";
+import { t } from "@/lib/lang";
 
 export default function Copropriete() {
   return (
     <>
       <Seo title={copropriete.seo.title} />
-      <PageHero eyebrow="Syndics & copropriétés" h1={copropriete.hero.h1} accent={["connaître"]}>
+      <PageHero eyebrow={t("Syndics & copropriétés", "Property managers & condominiums")} h1={copropriete.hero.h1} accent={[t("connaître", "know")]}>
         {copropriete.hero.body.map((paragraph) => (
           <p key={paragraph} className="mt-4 first:mt-0">
             {paragraph}
@@ -50,7 +51,7 @@ export default function Copropriete() {
       <SolutionDigitale
         {...detection.rapport}
         image="/img/detection/rapport-intervention.png"
-        imageAlt="Exemple de rapport d'intervention GEORESEAUX MAURITIUS"
+        imageAlt={t("Exemple de rapport d'intervention GEORESEAUX MAURITIUS", "Example of a GEORESEAUX MAURITIUS intervention report")}
       />
 
       <CtaBanner label={copropriete.cta} to={nav.devisCta.href} />

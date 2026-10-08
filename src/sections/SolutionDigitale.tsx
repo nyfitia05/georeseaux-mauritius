@@ -2,6 +2,7 @@ import { Check } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 import { cn } from "@/lib/utils";
+import { t } from "@/lib/lang";
 
 interface SolutionDigitaleProps {
   /** Titre de section — absent sur la brochure Détection (le paragraphe suit
@@ -47,7 +48,7 @@ export function SolutionDigitale({
   items,
   closing,
   image = "/img/global/rapport-intervention.png",
-  imageAlt = "Exemple de restitution GEORESEAUX MAURITIUS",
+  imageAlt = t("Exemple de restitution GEORESEAUX MAURITIUS", "Example of a GEORESEAUX MAURITIUS deliverable"),
 }: SolutionDigitaleProps) {
   return (
     <section className="bg-paper py-[35px]">
