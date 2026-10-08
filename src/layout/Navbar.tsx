@@ -8,7 +8,7 @@ import { t } from "@/lib/lang";
 import { cn } from "@/lib/utils";
 import { brand, nav } from "@/data/content";
 
-const navLinkBase = "text-sm font-medium text-ink-soft transition-colors duration-200 hover:text-blue-700";
+const navLinkBase = "font-display text-sm font-medium text-ink-soft transition-colors duration-200 hover:text-blue-700";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,7 +38,7 @@ export function Navbar() {
           <img src="/img/Logolong.png" alt={brand.name} className="h-10 w-auto max-w-[52vw] object-contain sm:h-11 sm:max-w-none" />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
           <NavLink
             to={nav.accueil.href}
             end
@@ -107,9 +107,13 @@ export function Navbar() {
              client, conservé plus bas dans le menu mobile et ailleurs sur le
              site). Numéro à confirmer par le client (voir commentaire dans
              data/content.ts). */}
+          {/* Visible à partir de 1280 px : entre 1024 et 1280 px, le menu en
+             Poppins ne laisse pas la place au logo, au menu, au bouton FR/EN
+             et au téléphone sur une seule ligne. Le numéro reste dans le
+             footer. */}
           <a
             href={brand.phoneHref}
-            className="flex items-center gap-2 rounded-full bg-yellow-500 px-4 py-2.5 text-sm font-bold text-blue-900 transition-colors hover:bg-yellow-400"
+            className="hidden items-center gap-2 whitespace-nowrap rounded-full bg-yellow-500 px-4 py-2.5 text-sm font-bold text-blue-900 transition-colors hover:bg-yellow-400 xl:flex"
           >
             <Phone className="h-4 w-4" strokeWidth={2.5} aria-hidden />
             {brand.phone}

@@ -42,9 +42,23 @@ export default {
           tint: "#F4F5F9",
         },
       },
+      // Mêmes polices que les sites Water Leak (Group, Expert, Academy) :
+      // Poppins pour les titres, Outfit pour le texte.
       fontFamily: {
-        display: ["'Space Grotesk'", "system-ui", "sans-serif"],
-        sans: ["'Inter'", "system-ui", "sans-serif"],
+        display: ["'Poppins'", "system-ui", "sans-serif"],
+        sans: ["'Outfit'", "system-ui", "sans-serif"],
+      },
+      // Tailles de texte alignées sur waterleakexpert.com : texte courant en
+      // 18–20 px avec un interligne aéré (1,65). Outfit est plus petite
+      // qu'Inter à taille égale, d'où des valeurs un peu plus grandes que
+      // celles de Tailwind par défaut. text-lg passe de 17 px (mobile) à
+      // 20 px (ordinateur), comme le texte des sites Water Leak.
+      fontSize: {
+        xs: ["0.8125rem", { lineHeight: "1.25rem" }],
+        sm: ["0.9375rem", { lineHeight: "1.6" }],
+        base: ["1.125rem", { lineHeight: "1.65" }],
+        lg: ["var(--fs-lg)", { lineHeight: "1.65" }],
+        xl: ["1.375rem", { lineHeight: "1.5" }],
       },
       maxWidth: {
         content: "1320px",

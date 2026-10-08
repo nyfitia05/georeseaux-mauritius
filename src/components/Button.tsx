@@ -7,7 +7,7 @@ type Variant = "primary" | "secondary" | "ghost";
 type Rounded = "sm" | "full";
 
 const base =
-  "inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.08em] transition-all duration-300 ease-signature focus-visible:outline-2";
+  "inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold transition-all duration-300 ease-signature focus-visible:outline-2";
 
 const variants: Record<Variant, string> = {
   primary: "bg-yellow-500 text-blue-900 hover:bg-yellow-400 active:bg-yellow-600",

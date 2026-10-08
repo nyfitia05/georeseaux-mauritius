@@ -4,6 +4,15 @@
 
 :root {
   --ease-signature: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Texte courant "text-lg" : 17 px sur mobile, 20 px dès la tablette —
+     même règle que les sites Water Leak. */
+  --fs-lg: 1.0625rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-lg: 1.25rem;
+  }
 }
 
 @layer base {
@@ -17,14 +26,27 @@
 
   body {
     @apply bg-paper text-ink;
-    font-feature-settings: "ss01" on, "cv01" on;
+    line-height: 1.65;
   }
 
+  /* Titres comme sur les sites Water Leak : Poppins, semi-gras pour h1/h2,
+     gras pour h3/h4, interligne 1,25. */
   h1,
   h2,
   h3,
   h4 {
-    @apply font-display text-ink tracking-tight;
+    @apply font-display text-ink;
+    line-height: 1.25;
+  }
+
+  h1,
+  h2 {
+    font-weight: 600;
+  }
+
+  h3,
+  h4 {
+    font-weight: 700;
   }
 
   ::selection {
