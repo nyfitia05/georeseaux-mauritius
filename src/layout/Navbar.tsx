@@ -23,7 +23,9 @@ export function Navbar() {
   }, [location.pathname]);
 
   return (
-
+    // Fond blanc permanent (plus de variante transparente en haut de page) :
+    // le header reste identique quel que soit le défilement, conformément à
+    // la maquette de référence transmise par le client.
     <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-[0_1px_0_rgba(18,24,43,0.08)]">
       {/* Barre en pleine largeur (pas de container-content ici) : le logo et
          la pastille téléphone doivent toucher les bords de l'écran, pas les
@@ -33,13 +35,7 @@ export function Navbar() {
         {/* Le lien garde h-14 / sm:h-16 (hauteur du header compensée par
            PageHero) ; le logo est plus petit à l'intérieur. */}
         <Link to="/" className="flex h-14 shrink-0 items-center sm:h-16">
-
-
-<img
-  src="/img/Logolong.png"
-  alt={brand.name}
-  className="h-7 w-auto max-w-[40vw] object-contain sm:h-9 sm:max-w-none lg:h-8 xl:h-9"
-/>
+          <img src="/img/Logolong.png" alt={brand.name} className="h-10 w-auto max-w-[52vw] object-contain sm:h-[52px] sm:max-w-none lg:h-11 xl:h-[52px]" />
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex xl:gap-7">

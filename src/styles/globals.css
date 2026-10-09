@@ -176,7 +176,7 @@ footer.wl-footer .wlf-email svg { width: 16px; height: 16px; flex: none; }
     padding: 0 32px !important; align-items: center !important; box-sizing: border-box;
   }
   footer.wl-footer .wlf-brand { align-items: center; gap: 2px; }
-  footer.wl-footer .wlf-logo img { height: 56px !important; width: auto !important; max-width: none !important; }
+  footer.wl-footer .wlf-logo img { height: 52px !important; width: auto !important; max-width: none !important; }
   footer.wl-footer .wlf-addr { margin: 2px 0 0 !important; font-size: 13px !important; line-height: 1.35 !important; }
   footer.wl-footer .wlf-legal p { font-size: 14px !important; line-height: 1.35 !important; }
   footer.wl-footer .wlf-links li { font-size: 14px !important; line-height: 1.35 !important; }
