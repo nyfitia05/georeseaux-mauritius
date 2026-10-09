@@ -34,10 +34,11 @@ export function Navbar() {
            PageHero) ; le logo est plus petit à l'intérieur. */}
         <Link to="/" className="flex h-14 shrink-0 items-center sm:h-16">
 
+
 <img
   src="/img/Logolong.png"
   alt={brand.name}
-  className="h-16 w-auto max-w-[75vw] object-contain sm:h-20 sm:max-w-none lg:h-16 xl:h-20"
+  className="h-7 w-auto max-w-[40vw] object-contain sm:h-9 sm:max-w-none lg:h-8 xl:h-9"
 />
         </Link>
 
