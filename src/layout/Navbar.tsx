@@ -35,7 +35,7 @@ export function Navbar() {
         {/* Le lien garde h-14 / sm:h-16 (hauteur du header compensée par
            PageHero) ; le logo est plus petit à l'intérieur. */}
         <Link to="/" className="flex h-14 shrink-0 items-center sm:h-16">
-          <img src="/img/Logolong.png" alt={brand.name} className="h-10 w-auto max-w-[52vw] object-contain sm:h-[52px] sm:max-w-none lg:h-11 xl:h-[52px]" />
+          <img src="/img/Logolong.png" alt={brand.name} className="h-10 w-auto max-w-[52vw] object-contain sm:h-[48px] sm:max-w-none lg:h-11 xl:h-[48px]" />
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
