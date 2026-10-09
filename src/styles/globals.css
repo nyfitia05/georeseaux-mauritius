@@ -165,3 +165,23 @@ footer.wl-footer .wlf-email {
 }
 footer.wl-footer .wlf-email:hover { color: #5a5b6e; }
 footer.wl-footer .wlf-email svg { width: 16px; height: 16px; flex: none; }
+
+
+/* ══ Footer aligné sur l'en-tête (ordinateur) ══
+   Même hauteur que l'en-tête (88px), même logo à la même taille (44px de haut),
+   logo et bouton téléphone alignés sur ceux de l'en-tête (32px des bords). */
+@media (min-width: 1101px) {
+  footer.wl-footer {
+    height: 88px !important; min-height: 88px !important;
+    padding: 0 32px !important; align-items: center !important; box-sizing: border-box;
+  }
+  footer.wl-footer .wlf-brand { align-items: center; gap: 2px; }
+  footer.wl-footer .wlf-logo img { height: 44px !important; width: auto !important; max-width: none !important; }
+  footer.wl-footer .wlf-addr { margin: 2px 0 0 !important; font-size: 13px !important; line-height: 1.35 !important; }
+  footer.wl-footer .wlf-legal p { font-size: 14px !important; line-height: 1.35 !important; }
+  footer.wl-footer .wlf-links li { font-size: 14px !important; line-height: 1.35 !important; }
+  footer.wl-footer .wlf-links a { font-size: 14px !important; }
+  footer.wl-footer .wlf-contact { align-items: flex-end !important; gap: 6px !important; }
+  footer.wl-footer .wlf-email { font-size: 14px !important; line-height: 1.35; }
+}
+
