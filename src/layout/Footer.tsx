@@ -27,23 +27,19 @@ export function Footer() {
         </address>
       </div>
 
-      <div className="wlf-legal">
-        <p>
-          <strong>TAN :</strong> 28535794
+      <div className="wlf-mid">
+        <ul className="wlf-links" aria-label={t("Sites du groupe Water Leak", "Water Leak group websites")}>
+          {footer.links.map((link) => (
+            <li key={link.label}>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+        <p className="wlf-legal-mini">
+          <strong>TAN :</strong> 28535794<span className="sep">·</span>
+          <strong>BRN :</strong> C234653<span className="sep">·</span>WATER LEAK CO LTD
         </p>
-        <p>
-          <strong>BRN :</strong> C234653
-        </p>
-        <p>WATER LEAK CO LTD</p>
       </div>
-
-      <ul className="wlf-links" aria-label={t("Sites du groupe Water Leak", "Water Leak group websites")}>
-        {footer.links.map((link) => (
-          <li key={link.label}>
-            <a href={link.href}>{link.label}</a>
-          </li>
-        ))}
-      </ul>
 
       <div className="wlf-contact">
         {/* Même bouton que celui de l'en-tête (Navbar), à l'identique. */}
