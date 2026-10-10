@@ -43,7 +43,7 @@ export const footer = {
     { label: "Group", href: "https://waterleakgroup.com/" },
     { label: "Academy", href: "https://waterleakacademy.com/" },
     { label: "Expert", href: "https://waterleakexpert.com/" },
-    { label: "Equipment", href: "https://waterleakequipment.com/" },
+    { label: "Monitoring", href: "https://waterleakequipment.com/" },
   ],
 };
 
