@@ -4,7 +4,7 @@ import { brand, footer } from "@/data/content";
 import { t } from "@/lib/lang";
 
 /** Pied de page commun aux sites Water Leak (même modèle sur Group, Expert,
- * Academy, Equipment et ici) : logo + adresse | TAN / BRN / société | liens
+ * Academy, Equipment et ici) : logo + adresse | société / BRN / TAN | liens
  * vers les autres sites | téléphone. Styles dans styles/globals.css
  * (bloc "FOOTER COMMUN WATER LEAK"), identiques aux sites en HTML. */
 export function Footer() {
@@ -36,8 +36,9 @@ export function Footer() {
           ))}
         </ul>
         <p className="wlf-legal-mini">
-          <strong>TAN :</strong> 28535794<span className="sep">·</span>
-          <strong>BRN :</strong> C234653<span className="sep">·</span>WATER LEAK CO LTD
+          WATER LEAK CO LTD<span className="sep">·</span>
+          <strong>BRN :</strong> C234653<span className="sep">·</span>
+          <strong>TAN :</strong> 28535794
         </p>
       </div>
 
