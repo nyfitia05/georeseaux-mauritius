@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://georeseauxmauritius.com/sitemap.xml
+Sitemap: https://www.georeseauxmauritius.com/sitemap.xml

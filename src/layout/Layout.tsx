@@ -17,6 +17,21 @@ export function Layout() {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [pathname]);
 
+  // Adresse "officielle" de chaque page pour Google (balise canonical) :
+  // sans ça, toutes les pages se déclaraient comme étant la page d'accueil.
+  useEffect(() => {
+    const path = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
+    const url = "https://www.georeseauxmauritius.com" + path;
+    let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
+      document.head.appendChild(link);
+    }
+    link.setAttribute("href", url);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+  }, [pathname]);
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
