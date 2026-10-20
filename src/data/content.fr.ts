@@ -38,7 +38,7 @@ export const brand = {
 /** Pied de page commun aux sites Water Leak : adresse + liens vers les
  * autres entités du groupe. */
 export const footer = {
-  address: ["Grand Baie – Île Maurice", "Océan Indien"],
+  address: ["Lifestyle Boulevard, Sottise Road, Suite 31", "Grand Baie 30510, Île Maurice"],
   links: [
     { label: "Group", href: "https://waterleakgroup.com/" },
     { label: "Academy", href: "https://waterleakacademy.com/" },

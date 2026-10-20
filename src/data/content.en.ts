@@ -18,7 +18,7 @@ export const brand: typeof FR.brand = {
 };
 
 export const footer: typeof FR.footer = {
-  address: ["Grand Baie – Mauritius", "Indian Ocean"],
+  address: ["Lifestyle Boulevard, Sottise Road, Suite 31", "Grand Baie 30510, Mauritius"],
   links: [
     { label: "Group", href: "https://waterleakgroup.com/" },
     { label: "Academy", href: "https://waterleakacademy.com/" },
