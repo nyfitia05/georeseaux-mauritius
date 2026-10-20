@@ -3,6 +3,7 @@ import { PageHero } from "@/sections/PageHero";
 import { HomeDevisForm } from "@/sections/HomeDevisForm";
 import { home } from "@/data/content";
 import { splitSentences } from "@/lib/textMarkup";
+import { t } from "@/lib/lang";
 
 /**
  * Page dédiée au questionnaire court de demande de devis — reprend le texte
@@ -19,7 +20,13 @@ import { splitSentences } from "@/lib/textMarkup";
 export default function DevisExpress() {
   return (
     <>
-      <Seo title={`${home.closing.heading} | GEORESEAUX MAURITIUS`} />
+      <Seo
+        title={`${home.closing.heading} | GEORESEAUX MAURITIUS`}
+        description={t(
+          "Parlez-nous de votre site : transmettez vos plans et informations, GEORESEAUX MAURITIUS étudie votre besoin et définit l'intervention adaptée à l'Île Maurice.",
+          "Tell us about your site: share your plans and information, and GEORESEAUX MAURITIUS will review your needs and define the right intervention in Mauritius.",
+        )}
+      />
       <PageHero
         h1={home.closing.heading}
         body={splitSentences(home.closing.body).map((sentence, index) => (

@@ -46,7 +46,7 @@ const unrollItem = {
 export default function Detection() {
   return (
     <>
-      <Seo title={detection.seo.title} />
+      <Seo title={detection.seo.title} description={detection.seo.description} />
       <PageHero
         h1={detection.hero.h1}
         accent={[t("vos réseaux enterrés", "underground networks")]}

@@ -17,7 +17,7 @@ import { monitoring, nav } from "@/data/content";
 export default function Monitoring() {
   return (
     <>
-      <Seo title={monitoring.seo.title} />
+      <Seo title={monitoring.seo.title} description={monitoring.seo.description} />
       <PageHero
         h1={monitoring.hero.h1}
         accent={["d'eau 24 h/24"]}

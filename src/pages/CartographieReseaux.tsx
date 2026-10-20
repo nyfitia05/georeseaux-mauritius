@@ -16,7 +16,7 @@ import { t } from "@/lib/lang";
 export default function CartographieReseaux() {
   return (
     <>
-      <Seo title={releves.seo.title} />
+      <Seo title={releves.seo.title} description={releves.seo.description} />
       <PageHero
         h1={releves.hero.h1}
         accent={[t("vos réseaux enterrés", "underground networks")]}

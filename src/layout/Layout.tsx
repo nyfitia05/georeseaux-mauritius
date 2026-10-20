@@ -42,13 +42,11 @@ export function Layout() {
     setLink('link[rel="alternate"][hreflang="x-default"]', { rel: "alternate", hreflang: "x-default", href: urlFr });
     document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
     document.querySelector('meta[property="og:locale"]')?.setAttribute("content", lang === "en" ? "en_MU" : "fr_MU");
-    if (lang === "en") {
-      // La description de index.html est en français : version anglaise pour /en/...
-      const desc =
-        "GEORESEAUX MAURITIUS supports asset managers, property managers, local authorities, businesses, industrial sites and project owners with the detection, location and mapping of their networks and infrastructure.";
-      document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
-      document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
-    }
+    // Chaque page fixe son titre et sa description (composant <Seo>, exécuté
+    // juste avant) : on recopie les deux pour le partage sur les réseaux sociaux.
+    const desc = document.querySelector('meta[name="description"]')?.getAttribute("content");
+    if (desc) document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", document.title);
   }, [pathname]);
 
   return (

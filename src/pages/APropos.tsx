@@ -10,7 +10,7 @@ import { lang, t } from "@/lib/lang";
 export default function APropos() {
   return (
     <>
-      <Seo title={aPropos.seo.title} />
+      <Seo title={aPropos.seo.title} description={aPropos.seo.description} />
       <PageHero
         eyebrow={t("À propos", "About")}
         h1={aPropos.hero.h1}

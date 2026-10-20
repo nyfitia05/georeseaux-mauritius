@@ -69,6 +69,7 @@ export const nav: typeof FR.nav = {
 export const home: typeof FR.home = {
   seo: {
     title: "Underground Network Detection & Mapping | GEORESEAUX MAURITIUS",
+    description: "Detection, location and mapping of underground networks in Mauritius, without destructive works. GEORESEAUX MAURITIUS supports site managers, property managers and businesses.",
   },
   hero: {
     h1: "Detect. Locate. Map. Monitor.",
@@ -123,7 +124,10 @@ export const home: typeof FR.home = {
 };
 
 export const detection: typeof FR.detection = {
-  seo: { title: "Underground Network Detection | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Underground Network Detection | GEORESEAUX MAURITIUS",
+    description: "Underground network detection in Mauritius: ground-penetrating radar, electromagnetic detection, traceable sondes and access point surveys, without destructive works.",
+  },
   hero: {
     h1: "Detect and locate your underground networks",
   },
@@ -166,7 +170,10 @@ export const detection: typeof FR.detection = {
 };
 
 export const releves: typeof FR.releves = {
-  seo: { title: "Underground Network Mapping | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Underground Network Mapping | GEORESEAUX MAURITIUS",
+    description: "Underground network mapping in Mauritius: routes, structures, measured depths and georeferencing, delivered as clear and usable plans.",
+  },
   hero: {
     h1: "Map your underground networks",
   },
@@ -186,7 +193,10 @@ export const releves: typeof FR.releves = {
 };
 
 export const cartographiePatrimoniale: typeof FR.cartographiePatrimoniale = {
-  seo: { title: "Network Asset Mapping | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Network Asset Mapping | GEORESEAUX MAURITIUS",
+    description: "Network asset mapping in Mauritius: rebuild the technical memory of your networks, building by building or zone by zone, and update it at every intervention.",
+  },
   hero: {
     h1: "Building the technical memory of your networks",
     body: "Successive works, modifications, extensions or missing plans can gradually create a gap between the available documentation and the reality on the ground. GEORESEAUX helps managers progressively build a map of their assets.",
@@ -201,7 +211,10 @@ export const cartographiePatrimoniale: typeof FR.cartographiePatrimoniale = {
 
 // Monitoring pages are no longer published on the Mauritius site.
 export const monitoring: typeof FR.monitoring = {
-  seo: { title: "Network & Equipment Monitoring | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Network & Equipment Monitoring | GEORESEAUX MAURITIUS",
+    description: "Remote monitoring of water networks in Mauritius: consumption, levels, lift and booster stations, boreholes and alerts when anomalies occur.",
+  },
   hero: {
     h1: "Monitor your water networks 24/7",
   },
@@ -229,7 +242,10 @@ export const monitoring: typeof FR.monitoring = {
 };
 
 export const copropriete: typeof FR.copropriete = {
-  seo: { title: "Condominium Network Plans & Mapping | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Condominium Network Plans & Mapping | GEORESEAUX MAURITIUS",
+    description: "Condominium network plans and mapping in Mauritius: network investigation, location of routes and manholes, and creation or update of plans.",
+  },
   hero: {
     h1: "Get to know your condominium's networks better",
     body: [
@@ -256,7 +272,10 @@ export const copropriete: typeof FR.copropriete = {
 };
 
 export const secteurs: typeof FR.secteurs = {
-  seo: { title: "Our Sectors | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Our Sectors | GEORESEAUX MAURITIUS",
+    description: "Property managers, hotels, industry, local authorities, developers and contractors: GEORESEAUX MAURITIUS detection and mapping solutions for every sector.",
+  },
   hero: { h1: "Solutions tailored to every property" },
   items: [
     {
@@ -283,7 +302,10 @@ export const secteursMenu: typeof FR.secteursMenu = [
 ];
 
 export const methodologie: typeof FR.methodologie = {
-  seo: { title: "Methodology | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Methodology | GEORESEAUX MAURITIUS",
+    description: "The GEORESEAUX MAURITIUS method in 6 steps: needs analysis, preparation, field investigation, data processing, mapping and final delivery.",
+  },
   hero: { h1: "From needs analysis to final delivery" },
   steps: [
     { number: "01", title: "Analysis", text: "Understand the need, the site, the scope and the expected results." },
@@ -296,7 +318,10 @@ export const methodologie: typeof FR.methodologie = {
 };
 
 export const aPropos: typeof FR.aPropos = {
-  seo: { title: "About Us | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "About Us | GEORESEAUX MAURITIUS",
+    description: "GEORESEAUX MAURITIUS helps professionals and asset managers in Mauritius understand their underground networks and infrastructure.",
+  },
   hero: {
     h1: "Know today. Secure tomorrow.",
     body: "GEORESEAUX MAURITIUS helps professionals and property managers understand their networks and infrastructure. Our approach combines field investigation, location, surveys, mapping and monitoring to progressively turn the information gathered on site into usable technical knowledge.",
@@ -315,7 +340,10 @@ export const aPropos: typeof FR.aPropos = {
 };
 
 export const devis: typeof FR.devis = {
-  seo: { title: "Prepare a Quote | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Prepare a Quote | GEORESEAUX MAURITIUS",
+    description: "Prepare your quote for network detection or mapping in Mauritius: describe your site and your needs, and GEORESEAUX MAURITIUS will review your request.",
+  },
   hero: {
     h1: "Prepare my quote",
     body: "So that we can offer you a suitable intervention, please fill in the information below. This form allows us to analyse your needs and, where possible, to prepare your quote without a prior site visit.",

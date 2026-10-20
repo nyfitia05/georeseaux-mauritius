@@ -9,7 +9,7 @@ import { t } from "@/lib/lang";
 export default function Secteurs() {
   return (
     <>
-      <Seo title={secteurs.seo.title} />
+      <Seo title={secteurs.seo.title} description={secteurs.seo.description} />
       <PageHero eyebrow={t("Secteurs", "Sectors")} h1={secteurs.hero.h1} accent={[t("adaptées", "tailored")]} align="center" />
 
       <section className="bg-paper py-[35px]">

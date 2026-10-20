@@ -14,7 +14,7 @@ import { t } from "@/lib/lang";
 export default function Copropriete() {
   return (
     <>
-      <Seo title={copropriete.seo.title} />
+      <Seo title={copropriete.seo.title} description={copropriete.seo.description} />
       <PageHero eyebrow={t("Syndics & copropriétés", "Property managers & condominiums")} h1={copropriete.hero.h1} accent={[t("connaître", "know")]}>
         {copropriete.hero.body.map((paragraph) => (
           <p key={paragraph} className="mt-4 first:mt-0">

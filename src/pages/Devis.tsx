@@ -210,7 +210,7 @@ export default function Devis() {
 
   return (
     <>
-      <Seo title={devis.seo.title} />
+      <Seo title={devis.seo.title} description={devis.seo.description} />
       <PageHero eyebrow={devis.hero.h1} h1={devis.hero.h1} accent={[t("devis", "quote")]} body={devis.hero.body} align="center" />
 
       {/* pt réduit (au lieu de py-[35px] symétrique) : le hero a déjà 35px de

@@ -151,6 +151,7 @@ export const nav = {
 export const home = {
   seo: {
     title: "Détection & Cartographie des Réseaux | GEORESEAUX MAURITIUS",
+    description: "Détection, localisation et cartographie des réseaux enterrés à l'Île Maurice, sans travaux destructifs. GEORESEAUX MAURITIUS accompagne gestionnaires, syndics et entreprises.",
   },
   hero: {
     // Titre et texte repris mot pour mot de la brochure — la 2e phrase du
@@ -241,7 +242,10 @@ export const home = {
 // côté ici, sur demande explicite et répétée du client : "EXACTEMENT COMME
 // LA PLAQUETTE, MÊME MOT").
 export const detection = {
-  seo: { title: "Détection de Réseaux Enterrés | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Détection de Réseaux Enterrés | GEORESEAUX MAURITIUS",
+    description: "Détection de réseaux enterrés à l'Île Maurice : géoradar, détection électromagnétique, sondes traçables et repérage des ouvrages, sans travaux destructifs.",
+  },
   hero: {
     // Titre et découpage repris mot pour mot de la brochure — pas de eyebrow,
     // pas de texte de corps sous le titre : la plaquette n'en a pas.
@@ -309,7 +313,10 @@ export const detection = {
 // d'intro, Plateau technique, Une solution digitale. Plus de bloc
 // "Restitutions possibles" ni "Chaîne de valeur" (absents de la plaquette).
 export const releves = {
-  seo: { title: "Cartographie des Réseaux Enterrés | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Cartographie des Réseaux Enterrés | GEORESEAUX MAURITIUS",
+    description: "Cartographie des réseaux enterrés à l'Île Maurice : tracés, ouvrages, profondeurs relevées et géoréférencement, restitués en plans clairs et exploitables.",
+  },
   hero: {
     h1: "Cartographiez vos réseaux enterrés",
   },
@@ -335,7 +342,10 @@ export const releves = {
 // Cartographie patrimoniale — /cartographie-patrimoniale/
 // ---------------------------------------------------------------------------
 export const cartographiePatrimoniale = {
-  seo: { title: "Cartographie Patrimoniale des Réseaux | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Cartographie Patrimoniale des Réseaux | GEORESEAUX MAURITIUS",
+    description: "Cartographie patrimoniale des réseaux à l'Île Maurice : reconstituer la mémoire technique de vos réseaux, par bâtiment ou par zone, et la compléter à chaque intervention.",
+  },
   hero: {
     h1: "Construire la mémoire technique de vos réseaux",
     body: "Travaux successifs, modifications, extensions ou absence de plans peuvent progressivement créer un écart entre la documentation disponible et la réalité du terrain. GEORESEAUX accompagne les gestionnaires dans la constitution progressive d'une cartographie de leur patrimoine.",
@@ -357,7 +367,10 @@ export const cartographiePatrimoniale = {
 // technique, Une solution digitale. Plus de section "Mise en œuvre" ni
 // "Détecter. Cartographier. Surveiller." (absentes de la plaquette).
 export const monitoring = {
-  seo: { title: "Monitoring des Réseaux & Équipements | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Monitoring des Réseaux & Équipements | GEORESEAUX MAURITIUS",
+    description: "Surveillance à distance des réseaux d'eau à l'Île Maurice : consommations, niveaux, relevage, surpression, forages et alertes en cas d'anomalie.",
+  },
   hero: {
     h1: "Surveillez vos réseaux d'eau 24 h/24",
   },
@@ -424,7 +437,10 @@ export const monitoring = {
 // 6. Syndics & copropriétés — /cartographie-reseaux-copropriete/
 // ---------------------------------------------------------------------------
 export const copropriete = {
-  seo: { title: "Plan & Cartographie des Réseaux de Copropriété | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Plan & Cartographie des Réseaux de Copropriété | GEORESEAUX MAURITIUS",
+    description: "Plan et cartographie des réseaux de copropriété à l'Île Maurice : recherche des réseaux, localisation des tracés et des regards, création ou mise à jour des plans.",
+  },
   hero: {
     h1: "Mieux connaître les réseaux de votre copropriété",
     body: [
@@ -462,7 +478,10 @@ export const copropriete = {
 // 7. Nos secteurs — /secteurs/
 // ---------------------------------------------------------------------------
 export const secteurs = {
-  seo: { title: "Nos Secteurs | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Nos Secteurs | GEORESEAUX MAURITIUS",
+    description: "Syndics, hôtels, industries, collectivités, promoteurs, entreprises de travaux : les solutions de détection et de cartographie de GEORESEAUX MAURITIUS par secteur.",
+  },
   hero: { h1: "Des solutions adaptées à chaque patrimoine" },
   items: [
     {
@@ -513,7 +532,10 @@ export const secteursMenu = [
 // 8. Méthodologie — /methodologie/
 // ---------------------------------------------------------------------------
 export const methodologie = {
-  seo: { title: "Méthodologie | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Méthodologie | GEORESEAUX MAURITIUS",
+    description: "La méthode GEORESEAUX MAURITIUS en 6 étapes : analyse du besoin, préparation, investigation terrain, traitement des données, cartographie et restitution.",
+  },
   hero: { h1: "De l'analyse du besoin à la restitution" },
   steps: [
     {
@@ -553,7 +575,10 @@ export const methodologie = {
 // À propos — /a-propos/
 // ---------------------------------------------------------------------------
 export const aPropos = {
-  seo: { title: "À Propos | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "À Propos | GEORESEAUX MAURITIUS",
+    description: "GEORESEAUX MAURITIUS accompagne les professionnels et gestionnaires de patrimoine à l'Île Maurice dans la connaissance de leurs réseaux et infrastructures enterrés.",
+  },
   hero: {
     h1: "Connaître aujourd'hui. Sécuriser demain.",
     body: "GEORESEAUX MAURITIUS accompagne les professionnels et gestionnaires de patrimoine dans la connaissance de leurs réseaux et infrastructures. Notre approche associe investigation terrain, localisation, relevés, cartographie et monitoring afin de transformer progressivement les informations recueillies sur le terrain en une connaissance technique exploitable.",
@@ -580,7 +605,10 @@ export const aPropos = {
 // l'ancien formulaire à 4 blocs (Type de besoin / Informations site /
 // Documents / Coordonnées).
 export const devis = {
-  seo: { title: "Préparer un Devis | GEORESEAUX MAURITIUS" },
+  seo: {
+    title: "Préparer un Devis | GEORESEAUX MAURITIUS",
+    description: "Préparez votre devis de détection ou de cartographie de réseaux à l'Île Maurice : décrivez votre site et votre besoin, GEORESEAUX MAURITIUS étudie votre demande.",
+  },
   hero: {
     h1: "Préparer mon devis",
     body: "Afin de vous proposer une intervention adaptée, merci de compléter les informations ci-dessous. Ce formulaire nous permet d'analyser votre besoin et, lorsque cela est possible, d'établir votre devis sans visite préalable.",

@@ -11,7 +11,7 @@ import { t } from "@/lib/lang";
 export default function CartographiePatrimoniale() {
   return (
     <>
-      <Seo title={cartographiePatrimoniale.seo.title} />
+      <Seo title={cartographiePatrimoniale.seo.title} description={cartographiePatrimoniale.seo.description} />
       <PageHero
         eyebrow={t("Cartographie patrimoniale", "Asset mapping")}
         h1={cartographiePatrimoniale.hero.h1}

@@ -9,7 +9,7 @@ import { lang, t } from "@/lib/lang";
 export default function Methodologie() {
   return (
     <>
-      <Seo title={methodologie.seo.title} />
+      <Seo title={methodologie.seo.title} description={methodologie.seo.description} />
       <PageHero
         eyebrow={t("Méthodologie", "Methodology")}
         h1={methodologie.hero.h1}

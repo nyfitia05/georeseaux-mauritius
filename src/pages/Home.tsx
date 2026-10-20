@@ -32,7 +32,7 @@ const introItems = [
 export default function Home() {
   return (
     <>
-      <Seo title={home.seo.title} />
+      <Seo title={home.seo.title} description={home.seo.description} />
       <HomeHero />
 
       {/* Bloc des 3 cartes — directement après le hero sur la plaquette,
