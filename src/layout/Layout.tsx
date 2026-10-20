@@ -4,6 +4,7 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { MobileStickyCta } from "./MobileStickyCta";
 import { nav } from "@/data/content";
+import { lang, pathFor } from "@/lib/lang";
 
 export function Layout() {
   const { pathname } = useLocation();
@@ -19,17 +20,35 @@ export function Layout() {
 
   // Adresse "officielle" de chaque page pour Google (balise canonical) :
   // sans ça, toutes les pages se déclaraient comme étant la page d'accueil.
+  // Chaque page existe en français (/...) et en anglais (/en/...) : on indique
+  // aussi à Google l'adresse de l'autre langue (balises hreflang).
   useEffect(() => {
+    const SITE = "https://www.georeseauxmauritius.com";
     const path = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
-    const url = "https://www.georeseauxmauritius.com" + path;
-    let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (!link) {
-      link = document.createElement("link");
-      link.setAttribute("rel", "canonical");
-      document.head.appendChild(link);
-    }
-    link.setAttribute("href", url);
+    const urlFr = SITE + pathFor("fr", path);
+    const urlEn = SITE + pathFor("en", path);
+    const url = lang === "en" ? urlEn : urlFr;
+    const setLink = (selector: string, attrs: Record<string, string>) => {
+      let link = document.head.querySelector<HTMLLinkElement>(selector);
+      if (!link) {
+        link = document.createElement("link");
+        document.head.appendChild(link);
+      }
+      for (const [k, v] of Object.entries(attrs)) link.setAttribute(k, v);
+    };
+    setLink('link[rel="canonical"]', { rel: "canonical", href: url });
+    setLink('link[rel="alternate"][hreflang="fr"]', { rel: "alternate", hreflang: "fr", href: urlFr });
+    setLink('link[rel="alternate"][hreflang="en"]', { rel: "alternate", hreflang: "en", href: urlEn });
+    setLink('link[rel="alternate"][hreflang="x-default"]', { rel: "alternate", hreflang: "x-default", href: urlFr });
     document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
+    document.querySelector('meta[property="og:locale"]')?.setAttribute("content", lang === "en" ? "en_MU" : "fr_MU");
+    if (lang === "en") {
+      // La description de index.html est en français : version anglaise pour /en/...
+      const desc =
+        "GEORESEAUX MAURITIUS supports asset managers, property managers, local authorities, businesses, industrial sites and project owners with the detection, location and mapping of their networks and infrastructure.";
+      document.querySelector('meta[name="description"]')?.setAttribute("content", desc);
+      document.querySelector('meta[property="og:description"]')?.setAttribute("content", desc);
+    }
   }, [pathname]);
 
   return (

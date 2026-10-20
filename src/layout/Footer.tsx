@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { CSSProperties } from "react";
 import { Mail, Phone } from "lucide-react";
 import { brand, footer } from "@/data/content";
@@ -14,9 +15,9 @@ export function Footer() {
       style={{ "--wlf-btn": "#FFD409", "--wlf-btn-text": "#101D40" } as CSSProperties}
     >
       <div className="wlf-brand">
-        <a href="/" className="wlf-logo">
+        <Link to="/" className="wlf-logo">
           <img src="/img/Logolong.png" alt={brand.name} />
-        </a>
+        </Link>
         <address className="wlf-addr">
           {footer.address.map((line, index) => (
             <span key={line}>

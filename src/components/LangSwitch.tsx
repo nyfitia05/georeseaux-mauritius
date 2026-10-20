@@ -1,5 +1,6 @@
+import { useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { lang, setLang, type Lang } from "@/lib/lang";
+import { lang, pathFor, type Lang } from "@/lib/lang";
 
 const OPTIONS: { code: Lang; label: string; title: string }[] = [
   { code: "fr", label: "FR", title: "Français" },
@@ -7,8 +8,11 @@ const OPTIONS: { code: Lang; label: string; title: string }[] = [
 ];
 
 /** Bouton FR / EN, même principe que sur les autres sites Water Leak :
- * deux pastilles, la langue active en jaune. */
+ * deux pastilles, la langue active en jaune. Ce sont de vrais liens vers la
+ * même page dans l'autre langue (/... ou /en/...), lisibles par Google. */
 export function LangSwitch({ className }: { className?: string }) {
+  // Dans le routeur, pathname est déjà sans le préfixe /en.
+  const { pathname, search, hash } = useLocation();
   return (
     <div
       role="group"
@@ -18,19 +22,20 @@ export function LangSwitch({ className }: { className?: string }) {
       {OPTIONS.map((option) => {
         const active = option.code === lang;
         return (
-          <button
+          <a
             key={option.code}
-            type="button"
+            href={pathFor(option.code, pathname) + search + hash}
+            hrefLang={option.code}
+            lang={option.code}
             title={option.title}
-            aria-pressed={active}
-            onClick={() => setLang(option.code)}
+            aria-current={active ? "true" : undefined}
             className={cn(
               "rounded-full px-3 py-1.5 text-xs font-bold tracking-wide transition-colors duration-200",
               active ? "bg-yellow-500 text-blue-900" : "text-ink-soft hover:text-blue-700",
             )}
           >
             {option.label}
-          </button>
+          </a>
         );
       })}
     </div>

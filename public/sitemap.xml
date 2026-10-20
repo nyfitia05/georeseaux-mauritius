@@ -1,62 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.georeseauxmauritius.com/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.georeseauxmauritius.com/detection-reseaux-enterres</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/detection-reseaux-enterres"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/detection-reseaux-enterres"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/detection-reseaux-enterres"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/detection-reseaux-enterres</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/detection-reseaux-enterres"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/detection-reseaux-enterres"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/detection-reseaux-enterres"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.georeseauxmauritius.com/cartographie-reseaux</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/cartographie-reseaux"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/cartographie-reseaux"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/cartographie-reseaux"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/cartographie-reseaux</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/cartographie-reseaux"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/cartographie-reseaux"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/cartographie-reseaux"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.georeseauxmauritius.com/cartographie-patrimoniale</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/cartographie-patrimoniale"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/cartographie-patrimoniale"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/cartographie-patrimoniale"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/cartographie-patrimoniale</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/cartographie-patrimoniale"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/cartographie-patrimoniale"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/cartographie-patrimoniale"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.georeseauxmauritius.com/cartographie-reseaux-copropriete</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/cartographie-reseaux-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/cartographie-reseaux-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/cartographie-reseaux-copropriete"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/cartographie-reseaux-copropriete</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/cartographie-reseaux-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/cartographie-reseaux-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/cartographie-reseaux-copropriete"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.georeseauxmauritius.com/secteurs</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/secteurs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/secteurs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/secteurs"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/secteurs</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/secteurs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/secteurs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/secteurs"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.georeseauxmauritius.com/methodologie</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/methodologie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/methodologie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/methodologie"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/methodologie</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/methodologie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/methodologie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/methodologie"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.georeseauxmauritius.com/a-propos</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/a-propos"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/a-propos</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/a-propos"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.georeseauxmauritius.com/demander-un-devis</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/demander-un-devis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/demander-un-devis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/demander-un-devis"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/demander-un-devis</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/demander-un-devis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/demander-un-devis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/demander-un-devis"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.georeseauxmauritius.com/devis-express</loc>
-    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/devis-express"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/devis-express"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/devis-express"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/devis-express</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/devis-express"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/devis-express"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/devis-express"/>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

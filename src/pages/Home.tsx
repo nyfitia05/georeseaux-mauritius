@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { Container } from "@/components/Container";
@@ -45,7 +46,7 @@ export default function Home() {
             {introItems.map((item) => (
               <div key={item.title}>
                 <Reveal>
-                  <a href={item.href} className="group block">
+                  <Link to={item.href} className="group block">
                     <div className="h-48 overflow-hidden rounded-sm sm:h-56">
                       <img
                         src={item.image}
@@ -55,7 +56,7 @@ export default function Home() {
                     </div>
                     <p className="mt-4 font-display text-base font-bold tracking-wide text-blue-700">{item.title}</p>
                     <p className="mt-2 text-sm leading-relaxed text-ink-soft">{item.text}</p>
-                  </a>
+                  </Link>
                 </Reveal>
               </div>
             ))}
