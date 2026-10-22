@@ -12,6 +12,7 @@ import APropos from "@/pages/APropos";
 import Devis from "@/pages/Devis";
 import DevisExpress from "@/pages/DevisExpress";
 import NotFound from "@/pages/NotFound";
+import SousPage from "@/pages/SousPage";
 
 export default function App() {
   return (
@@ -33,6 +34,10 @@ export default function App() {
           <Route path="a-propos" element={<APropos />} />
           <Route path="demander-un-devis" element={<Devis />} />
           <Route path="devis-express" element={<DevisExpress />} />
+          {/* Sous-pages SEO (cahier des charges SEO WATER LEAK GROUP, fiches 14, 15, 17) */}
+          <Route path="localisation-canalisations" element={<SousPage id="localisationCanalisations" />} />
+          <Route path="detection-reseaux-avant-travaux" element={<SousPage id="detectionAvantTravaux" />} />
+          <Route path="localisation-reseaux-irrigation" element={<SousPage id="localisationIrrigation" />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

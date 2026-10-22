@@ -37,6 +37,10 @@ const ROUTES = [
   { path: "/methodologie/", seo: (c) => c.methodologie.seo },
   { path: "/a-propos/", seo: (c) => c.aPropos.seo },
   { path: "/demander-un-devis/", seo: (c) => c.devis.seo },
+  // Sous-pages SEO (cahier des charges SEO WATER LEAK GROUP, fiches 14, 15, 17)
+  { path: "/localisation-canalisations/", seo: (c) => c.sousPages.localisationCanalisations.seo },
+  { path: "/detection-reseaux-avant-travaux/", seo: (c) => c.sousPages.detectionAvantTravaux.seo },
+  { path: "/localisation-reseaux-irrigation/", seo: (c) => c.sousPages.localisationIrrigation.seo },
   {
     path: "/devis-express/",
     // Mêmes textes que src/pages/DevisExpress.tsx.

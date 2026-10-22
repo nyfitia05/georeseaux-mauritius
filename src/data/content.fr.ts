@@ -787,3 +787,125 @@ export const devisAccueil = {
     label: "Précision complémentaire éventuelle",
   },
 };
+
+// ---------------------------------------------------------------------------
+// Sous-pages SEO — cahier des charges SEO WATER LEAK GROUP (oct. 2026),
+// fiches 14, 15 et 17. Textes repris mot pour mot des fiches ; seuls le
+// titre Google (celui de la fiche), la description Google et le texte alternatif des images sont rédigés pour le référencement.
+// Les fiches 13 (Détection de réseaux enterrés) et 16 (Cartographie et
+// géoréférencement) correspondent à des pages qui existent déjà
+// (/detection-reseaux-enterres/ et /cartographie-reseaux/) : pas de doublon.
+// ---------------------------------------------------------------------------
+export interface SousPage {
+  path: string;
+  label: string;
+  seo: { title: string; description: string };
+  h1: string;
+  heroImage: string;
+  image: string;
+  imageAlt: string;
+  intro: string[];
+  tags: string[];
+  /** heading vide = paragraphe sans titre */
+  sections: { heading: string; text: string }[];
+}
+
+export const sousPages: Record<"localisationCanalisations" | "detectionAvantTravaux" | "localisationIrrigation", SousPage> = {
+  localisationCanalisations: {
+    "path": "/localisation-canalisations/",
+    "label": "Localisation de canalisations",
+    "seo": {
+      "title": "Localisation de canalisations enterrées à Maurice",
+      "description": "Localisation de canalisations enterrées à Maurice et Rodrigues : recherche du tracé de conduites pour travaux, maintenance ou étude de réseau."
+    },
+    "h1": "Localisation de canalisations à Maurice et Rodrigues",
+    "heroImage": "/img/accueil/detection.png",
+    "image": "/img/detection/sonde.png",
+    "imageAlt": "Localisation d’une canalisation enterrée avec une sonde traçable à Maurice",
+    "intro": [
+      "Connaître le cheminement d’une conduite peut faciliter les travaux, la maintenance ou l’étude d’un réseau existant."
+    ],
+    "tags": [
+      "Recherche du tracé de conduites et localisation sur site"
+    ],
+    "sections": [
+      {
+        "heading": "Pourquoi réaliser cette investigation ou ce suivi ?",
+        "text": "La localisation dépend de la nature de la conduite, de sa profondeur, de son environnement et des accès disponibles. Les observations sont restituées selon la mission convenue."
+      },
+      {
+        "heading": "À qui s’adresse cette prestation ?",
+        "text": "Entreprises de construction, bureaux d’études, promoteurs, gestionnaires de domaines, maîtres d’œuvre et particuliers. Le périmètre de l’intervention est déterminé au cas par cas."
+      },
+      {
+        "heading": "Demande d’information ou de devis",
+        "text": "Indiquez la longueur estimée, le matériau et les plans disponibles. Notre équipe précisera la faisabilité et le périmètre proposé après examen des informations transmises."
+      }
+    ]
+  },
+  detectionAvantTravaux: {
+    "path": "/detection-reseaux-avant-travaux/",
+    "label": "Détection avant terrassement",
+    "seo": {
+      "title": "Détection de réseaux avant travaux et terrassement",
+      "description": "Détection de réseaux avant travaux et terrassement à Maurice et Rodrigues : repérage des réseaux enterrés pour préparer le chantier. GEORESEAUX MAURITIUS."
+    },
+    "h1": "Détection avant terrassement à Maurice et Rodrigues",
+    "heroImage": "/img/accueil/hero.png",
+    "image": "/img/detection/georadar.png",
+    "imageAlt": "Détection de réseaux enterrés au géoradar avant terrassement",
+    "intro": [
+      "Une intervention de terrassement doit être préparée avec une connaissance aussi fiable que possible des réseaux présents."
+    ],
+    "tags": [
+      "Préparation de chantier et réduction du risque d’endommagement"
+    ],
+    "sections": [
+      {
+        "heading": "Pourquoi réaliser cette investigation ou ce suivi ?",
+        "text": "La détection peut contribuer au repérage sur site et à la préparation du chantier. Elle ne remplace pas les obligations réglementaires et mesures de sécurité applicables."
+      },
+      {
+        "heading": "À qui s’adresse cette prestation ?",
+        "text": "Entreprises de construction, bureaux d’études, promoteurs, gestionnaires de domaines, maîtres d’œuvre et particuliers. Le périmètre de l’intervention est déterminé au cas par cas."
+      },
+      {
+        "heading": "Demande d’information ou de devis",
+        "text": "Précisez l’emprise, le calendrier du chantier à titre informatif et les réseaux connus. Notre équipe précisera la faisabilité et le périmètre proposé après examen des informations transmises."
+      }
+    ]
+  },
+  localisationIrrigation: {
+    "path": "/localisation-reseaux-irrigation/",
+    "label": "Localisation réseaux d’irrigation",
+    "seo": {
+      "title": "Localisation de réseaux d’irrigation enterrés",
+      "description": "Localisation de réseaux d’irrigation enterrés à Maurice et Rodrigues : recherche de conduites pour golfs, domaines privés et exploitations agricoles."
+    },
+    "h1": "Localisation réseaux d’irrigation à Maurice et Rodrigues",
+    "heroImage": "/img/accueil/patrimonial.png",
+    "image": "/img/detection/detection-ele.png",
+    "imageAlt": "Détection électromagnétique d’un réseau d’irrigation enterré",
+    "intro": [
+      "Les réseaux d’irrigation peuvent couvrir de grandes surfaces sur les golfs, domaines privés et exploitations agricoles."
+    ],
+    "tags": [
+      "Recherche de conduites d’irrigation pour golfs",
+      "domaines et exploitations"
+    ],
+    "sections": [
+      {
+        "heading": "Pourquoi réaliser cette investigation ou ce suivi ?",
+        "text": "Le repérage du tracé peut faciliter les interventions et la documentation du réseau. La faisabilité varie selon les matériaux, profondeurs et conditions du terrain."
+      },
+      {
+        "heading": "À qui s’adresse cette prestation ?",
+        "text": "Entreprises de construction, bureaux d’études, promoteurs, gestionnaires de domaines, maîtres d’œuvre et particuliers. Le périmètre de l’intervention est déterminé au cas par cas."
+      },
+      {
+        "heading": "Demande d’information ou de devis",
+        "text": "Fournissez un plan même partiel et la surface à investiguer. Notre équipe précisera la faisabilité et le périmètre proposé après examen des informations transmises."
+      }
+    ]
+  },
+};

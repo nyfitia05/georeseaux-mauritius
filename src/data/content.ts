@@ -33,3 +33,5 @@ export const methodologie = c.methodologie;
 export const aPropos = c.aPropos;
 export const devis = c.devis;
 export const devisAccueil = c.devisAccueil;
+export const sousPages = c.sousPages;
+export type { SousPage } from "./content.fr";

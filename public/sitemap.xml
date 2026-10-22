@@ -180,4 +180,58 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/localisation-canalisations/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/localisation-canalisations/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/localisation-canalisations/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/localisation-canalisations/"/>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/localisation-canalisations/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/localisation-canalisations/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/localisation-canalisations/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/localisation-canalisations/"/>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/detection-reseaux-avant-travaux/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/detection-reseaux-avant-travaux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/detection-reseaux-avant-travaux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/detection-reseaux-avant-travaux/"/>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/detection-reseaux-avant-travaux/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/detection-reseaux-avant-travaux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/detection-reseaux-avant-travaux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/detection-reseaux-avant-travaux/"/>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/localisation-reseaux-irrigation/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/localisation-reseaux-irrigation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/localisation-reseaux-irrigation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/localisation-reseaux-irrigation/"/>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/localisation-reseaux-irrigation/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/localisation-reseaux-irrigation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/localisation-reseaux-irrigation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/localisation-reseaux-irrigation/"/>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

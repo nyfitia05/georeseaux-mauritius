@@ -493,3 +493,74 @@ export const devisAccueil: typeof FR.devisAccueil = {
     label: "Any additional details",
   },
 };
+
+// Sous-pages SEO — version anglaise des fiches 14, 15 et 17 du cahier des
+// charges SEO (texte « English version – publication draft », mot pour mot).
+export const sousPages: typeof FR.sousPages = {
+  localisationCanalisations: {
+    "path": "/localisation-canalisations/",
+    "label": "Underground Pipe Locating Mauritius",
+    "seo": {
+      "title": "Underground Pipe Locating Mauritius | GEORESEAUX MAURITIUS",
+      "description": "Underground pipe locating in Mauritius and Rodrigues: finding the route of buried pipes for maintenance, repairs and construction. GEORESEAUX MAURITIUS."
+    },
+    "h1": "Underground Pipe Locating Mauritius",
+    "heroImage": "/img/accueil/detection.png",
+    "image": "/img/detection/sonde.png",
+    "imageAlt": "Locating a buried pipe with a traceable sonde in Mauritius",
+    "intro": [
+      "Locating an underground pipe route can support maintenance, repair planning and construction work. Feasibility depends on pipe material, depth, surrounding conditions and available access."
+    ],
+    "tags": [],
+    "sections": [
+      {
+        "heading": "",
+        "text": "Services are subject to site conditions and confirmation of the proposed scope. Contact WATER LEAK GROUP to discuss your property, facility or project in Mauritius or Rodrigues."
+      }
+    ]
+  },
+  detectionAvantTravaux: {
+    "path": "/detection-reseaux-avant-travaux/",
+    "label": "Utility Detection Before Excavation Mauritius",
+    "seo": {
+      "title": "Utility Detection Before Excavation Mauritius | GEORESEAUX MAURITIUS",
+      "description": "Utility detection before excavation in Mauritius and Rodrigues: locating buried services to prepare construction and earthworks. GEORESEAUX MAURITIUS."
+    },
+    "h1": "Utility Detection Before Excavation Mauritius",
+    "heroImage": "/img/accueil/hero.png",
+    "image": "/img/detection/georadar.png",
+    "imageAlt": "Ground-penetrating radar utility detection before excavation",
+    "intro": [
+      "Excavation should be prepared with the best available information about buried services. Detection can support on-site planning but does not replace applicable safety procedures or legal obligations."
+    ],
+    "tags": [],
+    "sections": [
+      {
+        "heading": "",
+        "text": "Services are subject to site conditions and confirmation of the proposed scope. Contact WATER LEAK GROUP to discuss your property, facility or project in Mauritius or Rodrigues."
+      }
+    ]
+  },
+  localisationIrrigation: {
+    "path": "/localisation-reseaux-irrigation/",
+    "label": "Irrigation Pipeline Locating Mauritius",
+    "seo": {
+      "title": "Irrigation Pipeline Locating Mauritius | GEORESEAUX MAURITIUS",
+      "description": "Irrigation pipeline locating in Mauritius and Rodrigues: finding buried irrigation pipes on golf courses, estates and agricultural land."
+    },
+    "h1": "Irrigation Pipeline Locating Mauritius",
+    "heroImage": "/img/accueil/patrimonial.png",
+    "image": "/img/detection/detection-ele.png",
+    "imageAlt": "Electromagnetic detection of a buried irrigation network",
+    "intro": [
+      "Irrigation pipe networks may extend across golf courses, estates and agricultural land. Pipe route investigation can support maintenance and network documentation, depending on materials, depth and site conditions."
+    ],
+    "tags": [],
+    "sections": [
+      {
+        "heading": "",
+        "text": "Services are subject to site conditions and confirmation of the proposed scope. Contact WATER LEAK GROUP to discuss your property, facility or project in Mauritius or Rodrigues."
+      }
+    ]
+  },
+};
