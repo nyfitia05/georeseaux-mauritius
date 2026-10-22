@@ -24,7 +24,9 @@ export function Layout() {
   // aussi à Google l'adresse de l'autre langue (balises hreflang).
   useEffect(() => {
     const SITE = "https://www.georeseauxmauritius.com";
-    const path = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
+    // Toujours avec la barre finale ("/secteurs/"), comme les liens du menu,
+    // le plan du site et les pages pré-rendues (scripts/prerender-seo.mjs).
+    const path = pathname.endsWith("/") ? pathname : pathname + "/";
     const urlFr = SITE + pathFor("fr", path);
     const urlEn = SITE + pathFor("en", path);
     const url = lang === "en" ? urlEn : urlFr;
