@@ -234,4 +234,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/cartographie-georeferencement-reseaux/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/cartographie-georeferencement-reseaux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/cartographie-georeferencement-reseaux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/cartographie-georeferencement-reseaux/"/>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.georeseauxmauritius.com/en/cartographie-georeferencement-reseaux/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.georeseauxmauritius.com/cartographie-georeferencement-reseaux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.georeseauxmauritius.com/en/cartographie-georeferencement-reseaux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.georeseauxmauritius.com/cartographie-georeferencement-reseaux/"/>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

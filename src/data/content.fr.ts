@@ -790,11 +790,10 @@ export const devisAccueil = {
 
 // ---------------------------------------------------------------------------
 // Sous-pages SEO — cahier des charges SEO WATER LEAK GROUP (oct. 2026),
-// fiches 14, 15 et 17. Textes repris mot pour mot des fiches ; seuls le
+// fiches 14, 15, 16 et 17. Textes repris mot pour mot des fiches ; seuls le
 // titre Google (celui de la fiche), la description Google et le texte alternatif des images sont rédigés pour le référencement.
-// Les fiches 13 (Détection de réseaux enterrés) et 16 (Cartographie et
-// géoréférencement) correspondent à des pages qui existent déjà
-// (/detection-reseaux-enterres/ et /cartographie-reseaux/) : pas de doublon.
+// La fiche 13 (Détection de réseaux enterrés) correspond à la page qui existe
+// déjà à la même adresse (/detection-reseaux-enterres/) : pas de doublon.
 // ---------------------------------------------------------------------------
 export interface SousPage {
   path: string;
@@ -810,7 +809,7 @@ export interface SousPage {
   sections: { heading: string; text: string }[];
 }
 
-export const sousPages: Record<"localisationCanalisations" | "detectionAvantTravaux" | "localisationIrrigation", SousPage> = {
+export const sousPages: Record<"localisationCanalisations" | "detectionAvantTravaux" | "localisationIrrigation" | "cartographieGeoreferencement", SousPage> = {
   localisationCanalisations: {
     "path": "/localisation-canalisations/",
     "label": "Localisation de canalisations",
@@ -905,6 +904,38 @@ export const sousPages: Record<"localisationCanalisations" | "detectionAvantTrav
       {
         "heading": "Demande d’information ou de devis",
         "text": "Fournissez un plan même partiel et la surface à investiguer. Notre équipe précisera la faisabilité et le périmètre proposé après examen des informations transmises."
+      }
+    ]
+  },
+  cartographieGeoreferencement: {
+    "path": "/cartographie-georeferencement-reseaux/",
+    "label": "Cartographie et géoréférencement",
+    "seo": {
+      "title": "Cartographie et géoréférencement de réseaux à Maurice",
+      "description": "Cartographie et géoréférencement de réseaux enterrés à Maurice et Rodrigues : plans, coordonnées et livrables pour la gestion patrimoniale et les travaux."
+    },
+    "h1": "Cartographie et géoréférencement à Maurice et Rodrigues",
+    "heroImage": "/img/accueil/carto.png",
+    "image": "/img/global/carto.png",
+    "imageAlt": "Cartographie géoréférencée de réseaux enterrés à Maurice",
+    "intro": [
+      "La cartographie des réseaux enterrés permet de structurer les informations recueillies pour la gestion patrimoniale et les futurs travaux."
+    ],
+    "tags": [
+      "Restitution cartographique et positionnement de réseaux selon les méthodes et livrables proposés"
+    ],
+    "sections": [
+      {
+        "heading": "Pourquoi réaliser cette investigation ou ce suivi ?",
+        "text": "Le niveau de précision, le système de coordonnées, les formats et les livrables doivent être définis contractuellement. Les données sont qualifiées selon leur méthode d’acquisition."
+      },
+      {
+        "heading": "À qui s’adresse cette prestation ?",
+        "text": "Entreprises de construction, bureaux d’études, promoteurs, gestionnaires de domaines, maîtres d’œuvre et particuliers. Le périmètre de l’intervention est déterminé au cas par cas."
+      },
+      {
+        "heading": "Demande d’information ou de devis",
+        "text": "Demandez un devis en précisant les formats et la précision attendus. Notre équipe précisera la faisabilité et le périmètre proposé après examen des informations transmises."
       }
     ]
   },

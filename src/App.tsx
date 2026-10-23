@@ -34,10 +34,11 @@ export default function App() {
           <Route path="a-propos" element={<APropos />} />
           <Route path="demander-un-devis" element={<Devis />} />
           <Route path="devis-express" element={<DevisExpress />} />
-          {/* Sous-pages SEO (cahier des charges SEO WATER LEAK GROUP, fiches 14, 15, 17) */}
+          {/* Sous-pages SEO (cahier des charges SEO WATER LEAK GROUP, fiches 14 à 17) */}
           <Route path="localisation-canalisations" element={<SousPage id="localisationCanalisations" />} />
           <Route path="detection-reseaux-avant-travaux" element={<SousPage id="detectionAvantTravaux" />} />
           <Route path="localisation-reseaux-irrigation" element={<SousPage id="localisationIrrigation" />} />
+          <Route path="cartographie-georeferencement-reseaux" element={<SousPage id="cartographieGeoreferencement" />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

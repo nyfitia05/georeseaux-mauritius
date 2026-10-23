@@ -494,7 +494,7 @@ export const devisAccueil: typeof FR.devisAccueil = {
   },
 };
 
-// Sous-pages SEO — version anglaise des fiches 14, 15 et 17 du cahier des
+// Sous-pages SEO — version anglaise des fiches 14, 15, 16 et 17 du cahier des
 // charges SEO (texte « English version – publication draft », mot pour mot).
 export const sousPages: typeof FR.sousPages = {
   localisationCanalisations: {
@@ -554,6 +554,28 @@ export const sousPages: typeof FR.sousPages = {
     "imageAlt": "Electromagnetic detection of a buried irrigation network",
     "intro": [
       "Irrigation pipe networks may extend across golf courses, estates and agricultural land. Pipe route investigation can support maintenance and network documentation, depending on materials, depth and site conditions."
+    ],
+    "tags": [],
+    "sections": [
+      {
+        "heading": "",
+        "text": "Services are subject to site conditions and confirmation of the proposed scope. Contact WATER LEAK GROUP to discuss your property, facility or project in Mauritius or Rodrigues."
+      }
+    ]
+  },
+  cartographieGeoreferencement: {
+    "path": "/cartographie-georeferencement-reseaux/",
+    "label": "Underground Utility Mapping Mauritius",
+    "seo": {
+      "title": "Underground Utility Mapping Mauritius | GEORESEAUX MAURITIUS",
+      "description": "Underground utility mapping and georeferencing in Mauritius and Rodrigues: coordinates, accuracy and deliverables for asset management and future works."
+    },
+    "h1": "Underground Utility Mapping Mauritius",
+    "heroImage": "/img/accueil/carto.png",
+    "image": "/img/global/carto.png",
+    "imageAlt": "Georeferenced map of underground utilities in Mauritius",
+    "intro": [
+      "Utility mapping organises information about underground infrastructure for maintenance and future projects. Coordinate systems, accuracy requirements, deliverable formats and survey methods should be agreed for each assignment."
     ],
     "tags": [],
     "sections": [
