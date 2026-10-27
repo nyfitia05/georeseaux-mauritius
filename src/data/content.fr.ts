@@ -364,6 +364,125 @@ export const accueil = {
 };
 
 // ---------------------------------------------------------------------------
+// Pages expertises refaites d'après les maquettes d'octobre 2026
+// ---------------------------------------------------------------------------
+export const pageDetection = {
+  crumb: "Détection et localisation des réseaux enterrés",
+  hero: {
+    title: "Détection et localisation",
+    accent: "des réseaux enterrés",
+    body: "Identifier et localiser les réseaux existants sur le terrain, sans travaux destructifs, pour sécuriser vos projets et optimiser la gestion de vos infrastructures.",
+  },
+  expertise: {
+    title: "Notre",
+    accent: "expertise",
+    text: "Nous détectons et localisons les réseaux enterrés afin de connaître leur position, leur tracé et leur profondeur. Cette information permet de sécuriser vos travaux, d'éviter les endommagements et d'optimiser la gestion de votre patrimoine.",
+    items: [
+      "Réseaux humides et secs",
+      "Ouvrages enterrés et accessoires",
+      "Tracé précis et repérage terrain",
+      "Méthodes non destructives",
+      "Adapté à tous types de sites",
+    ],
+    image: "/img/accueil/carto.png",
+    imageAlt: "Opérateur GEORESEAUX MAURITIUS avec un géoradar",
+  },
+  technologies: {
+    title: "Nos",
+    accent: "technologies",
+    items: [
+      { title: "Géoradar", text: "Investigation du sous-sol et recherche des réseaux.", image: "/img/technologies/georadar.jpg" },
+      { title: "Détection électromagnétique", text: "Repérage des réseaux conducteurs et non métalliques.", image: "/img/technologies/detection-electromagnetique.jpg" },
+      { title: "Sondes traçables", text: "Localisation des canalisations non détectables.", image: "/img/technologies/sondes-tracables.jpg" },
+      { title: "Positionnement et géoréférencement", text: "Relevés précis intégrés dans vos plans.", image: "/img/technologies/positionnement-georeferencement.jpg" },
+    ],
+  },
+  reseaux: {
+    title: "Types de réseaux",
+    accent: "détectés",
+    prev: "Réseaux précédents",
+    next: "Réseaux suivants",
+    items: [
+      { title: "Eau potable et eaux usées", image: "/img/reseaux/eau-potable-eaux-usees.jpg" },
+      { title: "Eaux pluviales", image: "/img/reseaux/eaux-pluviales.jpg" },
+      { title: "Réseaux électriques et éclairage", image: "/img/reseaux/reseaux-electriques-eclairage.jpg" },
+      { title: "Télécommunications", image: "/img/reseaux/telecommunications.jpg" },
+      { title: "Gaz et autres réseaux", image: "/img/reseaux/gaz.jpg" },
+      { title: "Ouvrages et accessoires (chambres, regards, etc.)", image: "/img/reseaux/ouvrages-accessoires.jpg" },
+    ],
+  },
+  besoins: {
+    title: "Adapter nos interventions",
+    accent: "à vos besoins",
+    items: [
+      { icon: "projet", title: "Phase projet", text: "Reconnaissance des réseaux avant travaux." },
+      { icon: "travaux", title: "Phase travaux", text: "Sécurisation et suivi du chantier." },
+      { icon: "existant", title: "Existant", text: "Localisation et repérage pour la mise à jour de plans." },
+    ],
+  },
+  livrables: {
+    title: "Nos livrables",
+    items: [
+      "Rapport d'intervention détaillé",
+      "Plans de localisation et de repérage",
+      "Données géoréférencées (DWG, PDF)",
+      "Photographies terrain",
+      "Profondeurs relevées (selon possibilités)",
+    ],
+  },
+};
+
+export const pageCartographie = {
+  crumb: "Cartographie et géoréférencement",
+  hero: {
+    title: "Cartographie et",
+    accent: "géoréférencement",
+    subtitle: "Transformer les relevés terrain en plans numériques précis et exploitables.",
+    body: "GEORESEAUX MAURITIUS réalise la cartographie des réseaux enterrés et le géoréférencement des ouvrages pour vous fournir des documents fiables, intégrables dans vos projets et systèmes de gestion de patrimoine.",
+  },
+  prestations: {
+    title: "Nos",
+    accent: "prestations",
+    text: "Toute l'information relevée sur le terrain est traitée et intégrée dans des plans clairs, géoréférencés et directement exploitables.",
+    items: [
+      "Relevés terrain des réseaux détectés",
+      "Géoréférencement de précision (GNSS)",
+      "Plans numériques (DWG, PDF)",
+      "Intégration dans vos systèmes SIG",
+      "Identification des ouvrages et points singuliers",
+      "Adaptation aux référentiels et formats de vos projets",
+    ],
+    image: "/img/technologies/positionnement-georeferencement.jpg",
+    imageAlt: "Relevé GNSS sur tablette de terrain",
+  },
+  technologies: {
+    title: "Nos",
+    accent: "technologies",
+    after: "pour la cartographie",
+    items: [
+      { title: "Positionnement et géoréférencement", text: "Relevés précis intégrés dans vos plans.", image: "/img/technologies/positionnement-georeferencement.jpg" },
+      { title: "Géoradar", text: "Investigation du sous-sol et localisation des réseaux.", image: "/img/technologies/georadar.jpg" },
+      { title: "Détection électromagnétique", text: "Repérage des réseaux conducteurs et non métalliques.", image: "/img/technologies/detection-electromagnetique.jpg" },
+      { title: "Sondes traçables", text: "Localisation des canalisations non détectables.", image: "/img/technologies/sondes-tracables.jpg" },
+    ],
+  },
+  livrables: {
+    title: "Des",
+    accent: "livrables",
+    after: "adaptés à vos besoins",
+    text: "Nous fournissons des documents précis et exploitables, adaptés à vos projets et à vos outils de gestion.",
+    items: [
+      "Plans de réseaux géoréférencés (DWG, PDF)",
+      "Tableaux d'attributs et fiches ouvrages",
+      "Coordonnées précises des éléments relevés",
+      "Formats compatibles avec vos systèmes SIG",
+      "Rapport technique détaillé avec méthodologie et photos",
+    ],
+    imageAlt: "Exemples de plans de réseaux réalisés par GEORESEAUX MAURITIUS",
+  },
+};
+
+// ---------------------------------------------------------------------------
 // 3. Détection & localisation — /detection-reseaux-enterres/
 // ---------------------------------------------------------------------------
 // Page réécrite en septembre 2026 pour reprendre mot pour mot la brochure

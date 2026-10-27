@@ -223,6 +223,122 @@ export const accueil: typeof FR.accueil = {
   },
 };
 
+export const pageDetection: typeof FR.pageDetection = {
+  crumb: "Detection and location of underground networks",
+  hero: {
+    title: "Detection and location",
+    accent: "of underground networks",
+    body: "Identify and locate existing networks on site, without destructive works, to secure your projects and optimise the management of your infrastructure.",
+  },
+  expertise: {
+    title: "Our",
+    accent: "expertise",
+    text: "We detect and locate underground networks to establish their position, route and depth. This information helps you secure your works, avoid damage and optimise the management of your assets.",
+    items: [
+      "Wet and dry networks",
+      "Buried structures and fittings",
+      "Accurate routing and on-site marking",
+      "Non-destructive methods",
+      "Suitable for all types of sites",
+    ],
+    image: "/img/accueil/carto.png",
+    imageAlt: "GEORESEAUX MAURITIUS operator with a ground-penetrating radar",
+  },
+  technologies: {
+    title: "Our",
+    accent: "technologies",
+    items: [
+      { title: "Ground-penetrating radar", text: "Subsurface investigation and network search.", image: "/img/technologies/georadar.jpg" },
+      { title: "Electromagnetic detection", text: "Locating conductive and non-metallic networks.", image: "/img/technologies/detection-electromagnetique.jpg" },
+      { title: "Traceable sondes", text: "Locating pipes that cannot be detected otherwise.", image: "/img/technologies/sondes-tracables.jpg" },
+      { title: "Positioning and georeferencing", text: "Accurate surveys integrated into your plans.", image: "/img/technologies/positionnement-georeferencement.jpg" },
+    ],
+  },
+  reseaux: {
+    title: "Types of networks",
+    accent: "detected",
+    prev: "Previous networks",
+    next: "Next networks",
+    items: [
+      { title: "Drinking water and wastewater", image: "/img/reseaux/eau-potable-eaux-usees.jpg" },
+      { title: "Stormwater", image: "/img/reseaux/eaux-pluviales.jpg" },
+      { title: "Electrical and lighting networks", image: "/img/reseaux/reseaux-electriques-eclairage.jpg" },
+      { title: "Telecommunications", image: "/img/reseaux/telecommunications.jpg" },
+      { title: "Gas and other networks", image: "/img/reseaux/gaz.jpg" },
+      { title: "Structures and fittings (chambers, manholes, etc.)", image: "/img/reseaux/ouvrages-accessoires.jpg" },
+    ],
+  },
+  besoins: {
+    title: "Interventions tailored",
+    accent: "to your needs",
+    items: [
+      { icon: "projet", title: "Design phase", text: "Network survey before works." },
+      { icon: "travaux", title: "Works phase", text: "Securing and monitoring the worksite." },
+      { icon: "existant", title: "Existing sites", text: "Location and marking to update plans." },
+    ],
+  },
+  livrables: {
+    title: "Our deliverables",
+    items: [
+      "Detailed intervention report",
+      "Location and marking plans",
+      "Georeferenced data (DWG, PDF)",
+      "On-site photographs",
+      "Depths recorded (where possible)",
+    ],
+  },
+};
+
+export const pageCartographie: typeof FR.pageCartographie = {
+  crumb: "Mapping and georeferencing",
+  hero: {
+    title: "Mapping and",
+    accent: "georeferencing",
+    subtitle: "Turn field surveys into accurate, usable digital plans.",
+    body: "GEORESEAUX MAURITIUS maps underground networks and georeferences structures to provide reliable documents that integrate into your projects and asset management systems.",
+  },
+  prestations: {
+    title: "Our",
+    accent: "services",
+    text: "All the information collected on site is processed and integrated into clear, georeferenced, ready-to-use plans.",
+    items: [
+      "Field surveys of detected networks",
+      "High-precision georeferencing (GNSS)",
+      "Digital plans (DWG, PDF)",
+      "Integration into your GIS",
+      "Identification of structures and key points",
+      "Adapted to your projects' reference systems and formats",
+    ],
+    image: "/img/technologies/positionnement-georeferencement.jpg",
+    imageAlt: "GNSS survey on a field tablet",
+  },
+  technologies: {
+    title: "Our",
+    accent: "technologies",
+    after: "for mapping",
+    items: [
+      { title: "Positioning and georeferencing", text: "Accurate surveys integrated into your plans.", image: "/img/technologies/positionnement-georeferencement.jpg" },
+      { title: "Ground-penetrating radar", text: "Subsurface investigation and network location.", image: "/img/technologies/georadar.jpg" },
+      { title: "Electromagnetic detection", text: "Locating conductive and non-metallic networks.", image: "/img/technologies/detection-electromagnetique.jpg" },
+      { title: "Traceable sondes", text: "Locating pipes that cannot be detected otherwise.", image: "/img/technologies/sondes-tracables.jpg" },
+    ],
+  },
+  livrables: {
+    title: "Deliverables",
+    accent: "tailored",
+    after: "to your needs",
+    text: "We provide accurate, usable documents adapted to your projects and management tools.",
+    items: [
+      "Georeferenced network plans (DWG, PDF)",
+      "Attribute tables and structure sheets",
+      "Precise coordinates of surveyed elements",
+      "Formats compatible with your GIS",
+      "Detailed technical report with methodology and photos",
+    ],
+    imageAlt: "Examples of network plans produced by GEORESEAUX MAURITIUS",
+  },
+};
+
 export const detection: typeof FR.detection = {
   seo: {
     title: "Underground Network Detection | GEORESEAUX MAURITIUS",

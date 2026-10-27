@@ -1,6 +1,5 @@
-import { useRef, type ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
@@ -8,6 +7,7 @@ import { HomeHero } from "@/sections/HomeHero";
 import { PlateauTechnique } from "@/sections/PlateauTechnique";
 import { accueil, home } from "@/data/content";
 import { cn } from "@/lib/utils";
+import { Carousel, DocPage, Title, accentYellow, cardBg, titleBlue } from "@/components/Maquette";
 
 // Accueil reproduit d'après la maquette transmise par le client (octobre
 // 2026) — même structure, même design, mêmes textes — avec ses modifications :
@@ -15,65 +15,7 @@ import { cn } from "@/lib/utils";
 // complet" retiré, flèches sur les secteurs, plateau technique séparé et placé
 // au-dessus du rapport, bouton "Voir un exemple de rapport" retiré.
 
-const titleBlue = "text-blue-700";
-const accentYellow = "text-yellow-600";
-
-/** Titre en deux couleurs, comme sur la maquette : bleu + jaune. */
-function Title({ title, accent, light = false }: { title: string; accent: string; light?: boolean }) {
-  return (
-    <h2
-      className={cn(
-        "font-display text-[28px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[38px]",
-        light ? "text-white" : titleBlue,
-      )}
-    >
-      {title} <span className={light ? "text-yellow-500" : accentYellow}>{accent}</span>
-    </h2>
-  );
-}
-
-/** Rangée défilante avec une flèche jaune à gauche et à droite. */
-function Carousel({
-  children,
-  prev,
-  next,
-  className,
-}: {
-  children: ReactNode;
-  prev: string;
-  next: string;
-  className?: string;
-}) {
-  const track = useRef<HTMLDivElement>(null);
-  const scroll = (dir: 1 | -1) => {
-    const el = track.current;
-    if (!el) return;
-    const first = el.firstElementChild as HTMLElement | null;
-    const step = first ? first.offsetWidth + 16 : el.clientWidth * 0.8;
-    const perView = Math.max(1, Math.floor((el.clientWidth + 16) / step));
-    el.scrollBy({ left: dir * step * perView, behavior: "smooth" });
-  };
-  const arrow =
-    "absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-yellow-500 text-blue-900 shadow-[0_6px_18px_rgba(16,29,64,0.25)] transition-transform hover:scale-105";
-  return (
-    <div className={cn("relative", className)}>
-      <button type="button" onClick={() => scroll(-1)} aria-label={prev} className={cn(arrow, "-left-2 sm:-left-5")}>
-        <ChevronLeft className="h-6 w-6" strokeWidth={2.6} aria-hidden />
-      </button>
-      <div
-        ref={track}
-        className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-      >
-        {children}
-      </div>
-      <button type="button" onClick={() => scroll(1)} aria-label={next} className={cn(arrow, "-right-2 sm:-right-5")}>
-        <ChevronRight className="h-6 w-6" strokeWidth={2.6} aria-hidden />
-      </button>
-    </div>
-  );
-}
-
-const card = "bg-[#F3F6FC] shadow-[0_6px_20px_rgba(16,29,64,0.06)]";
+const card = cardBg;
 
 function Expertises() {
   return (
@@ -188,15 +130,6 @@ function Methodologie() {
   );
 }
 
-/** Une page de rapport stylisée (fond blanc, ombre), pour le visuel. */
-function ReportPage({ children }: { children: ReactNode }) {
-  return (
-    <div className="aspect-[1/1.414] overflow-hidden bg-white p-3 shadow-[0_10px_30px_rgba(16,29,64,0.18)] ring-1 ring-blue-100">
-      {children}
-    </div>
-  );
-}
-
 function Rapport() {
   const { title, accent, intro, items, coverTitle, coverFields, imageAlt } = accueil.rapport;
   const line = "h-1 rounded bg-blue-100";
@@ -220,7 +153,7 @@ function Rapport() {
 
         <Reveal delay={0.1}>
           <div className="grid grid-cols-3 gap-3 sm:gap-5" role="img" aria-label={imageAlt}>
-            <ReportPage>
+            <DocPage>
               <img src="/img/Logolong.png" alt="" className="h-4 w-auto sm:h-5" />
               <p className="mt-6 font-display text-[9px] font-bold text-blue-900 sm:text-[11px]">{coverTitle}</p>
               <div className="mt-4 flex flex-col gap-2">
@@ -235,8 +168,8 @@ function Rapport() {
                 <img src="/img/exemples/voirie-urbaine.jpg" alt="" className="aspect-[4/3] w-full object-cover" />
                 <img src="/img/technologies/georadar.jpg" alt="" className="aspect-[4/3] w-full object-cover" />
               </div>
-            </ReportPage>
-            <ReportPage>
+            </DocPage>
+            <DocPage>
               <div className={cn(line, "w-2/3")} />
               <div className={cn(line, "mt-1.5 w-1/2")} />
               <img src="/img/accueil/patrimonial.png" alt="" className="mt-3 aspect-square w-full object-cover" />
@@ -245,8 +178,8 @@ function Rapport() {
                 <div className={cn(line, "w-5/6")} />
                 <div className={cn(line, "w-2/3")} />
               </div>
-            </ReportPage>
-            <ReportPage>
+            </DocPage>
+            <DocPage>
               <div className="flex flex-col gap-1.5">
                 <div className={line} />
                 <div className={cn(line, "w-5/6")} />
@@ -257,7 +190,7 @@ function Rapport() {
                 <div className={cn(line, "w-4/5")} />
                 <div className={cn(line, "w-1/2")} />
               </div>
-            </ReportPage>
+            </DocPage>
           </div>
         </Reveal>
       </Container>

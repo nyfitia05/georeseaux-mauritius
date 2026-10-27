@@ -1,105 +1,121 @@
+import { Gauge, Landmark, Map as MapIcon, type LucideIcon } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { Container } from "@/components/Container";
-import { SectionHeading } from "@/components/SectionHeading";
-import { PageHero } from "@/sections/PageHero";
-import { PlateauTechnique } from "@/sections/PlateauTechnique";
-import { SolutionDigitale } from "@/sections/SolutionDigitale";
-import { CtaBanner } from "@/sections/CtaBanner";
-import { motion } from "framer-motion";
-import { EASE_SIGNATURE, staggerContainer, viewport } from "@/animations/variants";
-import { detection, nav } from "@/data/content";
-import { t } from "@/lib/lang";
+import { Reveal } from "@/components/Reveal";
+import { Carousel, CheckList, ExpertiseHero, PhotoCard, Title, cardBg, titleBlue } from "@/components/Maquette";
+import { detection, home, nav, pageDetection as p } from "@/data/content";
+import { cn } from "@/lib/utils";
 
-// Photos terrain fournies par le client (public/img/detection/*.png),
-// associées par titre aux 4 technologies — texte jamais modifié, seule
-// l'illustration change. "Inspection et repérage des ouvrages" reprend la
-// photo déjà utilisée pour l'ancien intitulé "Observation terrain" (même
-// sujet, seul le libellé de la brochure diffère).
-// Images dans le même ordre que detection.technologies.items (FR et EN).
-const technologyImages = [
-  "/img/detection/georadar.png",
-  "/img/detection/detection-ele.png",
-  "/img/detection/sonde.png",
-  "/img/detection/observation.png",
-];
+// Page refaite d'après la maquette "Détection et localisation" (octobre 2026),
+// avec les consignes du client : bouton "Demander un devis" dans le hero,
+// "Notre expertise" en deux blocs l'un sous l'autre avec la photo à la
+// hauteur des textes, "Types de réseaux détectés" en section à part avec une
+// photo par réseau et des flèches, plateau technique retiré, "Nos
+// interventions récentes" masqué (voir en bas du fichier).
 
-// Variante "déroulé" pour les cartes photo ci-dessous : propagée depuis le
-// <motion.ul> parent (variants + whileInView sur la liste, pas sur chaque
-// carte individuellement) — c'est ce mécanisme, déjà utilisé pour les autres
-// grilles du site (ExpertiseShowcase, MonitoringGrid, CardGrid), qui se
-// déclenche réellement au scroll ; le déclenchement indépendant par carte
-// testé précédemment ne s'activait jamais.
-const unrollItem = {
-  hidden: { clipPath: "inset(0 0 100% 0)" },
-  show: {
-    clipPath: "inset(0 0 0% 0)",
-    transition: { duration: 0.9, ease: EASE_SIGNATURE },
-  },
-};
+const icons: Record<string, LucideIcon> = { projet: MapIcon, travaux: Gauge, existant: Landmark };
 
-// Page réécrite en septembre 2026 pour coller mot pour mot à la brochure
-// DÉTECTION_LOCALISATION_COPROPRIETE.pdf (page Détection) : hero aligné à
-// gauche (comme sur la plaquette) sans texte d'accroche additionnel,
-// "Technologies" directement suivi des 4 cartes (plus de paragraphe
-// d'intro), plus de section "Limites de la détection" (absente de la
-// plaquette), un seul CTA en bas de page (pas de bouton "Être rappelé").
 export default function Detection() {
   return (
     <>
       <Seo title={detection.seo.title} description={detection.seo.description} />
-      <PageHero
-        h1={detection.hero.h1}
-        accent={[t("vos réseaux enterrés", "underground networks")]}
-        image="/img/accueil/detection-hero.png"
-        align="center"
+
+      <ExpertiseHero
+        crumbs={[
+          { label: nav.accueil.label, href: "/" },
+          { label: nav.expertises.label },
+          { label: p.crumb },
+        ]}
+        title={p.hero.title}
+        accent={p.hero.accent}
+        body={p.hero.body}
+        image="/img/accueil/hero.png"
+        imagePosition="65% center"
+        cta={{ label: home.hero.cta, href: nav.devisCta.href }}
       />
 
-      <section className="bg-paper py-[35px]">
-        <Container className="max-w-[2000px] text-center">
-          <SectionHeading align="center">{detection.technologies.heading}</SectionHeading>
-        </Container>
-        <Container className="mt-12 max-w-[2000px]">
-          {/* Chaque carte se "déroule" verticalement (clip-path) au fil du
-             scroll ; le déclenchement whileInView est porté par la liste
-             (<motion.ul>) et propagé aux cartes via variants, avec un léger
-             décalage entre elles (staggerChildren). */}
-          <motion.ul
-            variants={staggerContainer(0.12)}
-            initial="hidden"
-            whileInView="show"
-            viewport={viewport}
-            className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {detection.technologies.items.map((item, index) => (
-              <motion.li
-                key={item.title}
-                variants={unrollItem}
-                className="group relative h-72 overflow-hidden rounded-sm"
-              >
-                <img
-                  src={technologyImages[index]}
-                  alt={item.title}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/50 via-40% to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5">
-                  <p className="font-display text-lg font-semibold text-white">{item.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-blue-50">{item.text}</p>
-                </div>
-              </motion.li>
-            ))}
-          </motion.ul>
+      {/* Notre expertise : texte et liste l'un sous l'autre, photo à droite à
+         la même hauteur que les deux blocs. */}
+      <section className="bg-white py-10 lg:py-12">
+        <Container className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <Reveal className="flex flex-col gap-5">
+            <Title title={p.expertise.title} accent={p.expertise.accent} />
+            <div className={cn(cardBg, "p-6")}>
+              <p className="text-lg leading-relaxed text-ink">{p.expertise.text}</p>
+            </div>
+            <div className={cn(cardBg, "p-6")}>
+              <CheckList items={p.expertise.items} />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1} className="relative min-h-[280px] overflow-hidden">
+            <img
+              src={p.expertise.image}
+              alt={p.expertise.imageAlt}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </Reveal>
         </Container>
       </section>
 
-      <PlateauTechnique />
-      <SolutionDigitale
-        {...detection.rapport}
-        image="/img/detection/rapport-intervention.png"
-        imageAlt={t("Exemple de rapport d'intervention GEORESEAUX MAURITIUS", "Example of a GEORESEAUX MAURITIUS intervention report")}
-      />
+      <section className="bg-white py-8">
+        <Container>
+          <Title title={p.technologies.title} accent={p.technologies.accent} />
+          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {p.technologies.items.map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.05}>
+                <PhotoCard {...item} className="h-full" />
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-      <CtaBanner label={detection.cta} to={nav.devisCta.href} heading={detection.tagline} withCallback={false} />
+      {/* Types de réseaux détectés : section à part, une photo par réseau,
+         défilement avec les flèches. */}
+      <section className="bg-white py-8">
+        <Container>
+          <Title title={p.reseaux.title} accent={p.reseaux.accent} />
+          <Carousel prev={p.reseaux.prev} next={p.reseaux.next} className="mt-5">
+            {p.reseaux.items.map((item) => (
+              <PhotoCard key={item.title} {...item} ratio="aspect-[4/3]" className="home-slide-6 flex-none snap-start" />
+            ))}
+          </Carousel>
+        </Container>
+      </section>
+
+      <section className="bg-white pb-14 pt-8">
+        <Container className="grid grid-cols-1 gap-5 lg:grid-cols-[1.7fr_1fr]">
+          <Reveal className={cn(cardBg, "p-6 lg:p-8")}>
+            <h2 className={cn("font-display text-2xl font-extrabold leading-tight sm:text-[28px]", titleBlue)}>
+              {p.besoins.title} <span className="text-yellow-600">{p.besoins.accent}</span>
+            </h2>
+            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-blue-100">
+              {p.besoins.items.map((item) => {
+                const Icon = icons[item.icon] ?? MapIcon;
+                return (
+                  <div key={item.title} className="sm:px-5 sm:first:pl-0 sm:last:pr-0">
+                    <Icon className="h-8 w-8 text-blue-700" strokeWidth={1.6} aria-hidden />
+                    <h3 className={cn("mt-3 font-display text-base font-bold", titleBlue)}>{item.title}</h3>
+                    <p className="mt-1 text-[15px] leading-snug text-ink-soft">{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </Reveal>
+          <Reveal delay={0.1} className={cn(cardBg, "p-6 lg:p-8")}>
+            <h2 className={cn("font-display text-2xl font-extrabold leading-tight sm:text-[28px]", titleBlue)}>
+              {p.livrables.title}
+            </h2>
+            <CheckList items={p.livrables.items} className="mt-5" />
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* "Nos interventions récentes" (maquette) : masqué en attendant les
+         vrais documents de mission, comme sur l'accueil (retour client du
+         27/10/2026). Pour l'activer, réutiliser le carrousel <Exemples />
+         de pages/Home.tsx. */}
     </>
   );
 }
