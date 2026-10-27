@@ -29,7 +29,13 @@ export const footer: typeof FR.footer = {
 
 export const plateauTechnique: typeof FR.plateauTechnique = {
   heading: "Technical support desk",
-  item: { label: "Call handling", detail: "Monday to Friday, 8am – 7pm" },
+  headingAccent: "support desk",
+  intro: "We handle:",
+  items: [
+    { label: "Calls", detail: "Monday to Saturday, 8am – 7pm" },
+    { label: "Emails", detail: "7 days a week" },
+    { label: "Appointments", detail: "same day" },
+  ],
   cta: "Request a quote",
 };
 
@@ -52,10 +58,10 @@ export const pillars: CardItem[] = [
 export const nav: typeof FR.nav = {
   accueil: { label: "Home", href: "/" },
   expertises: {
-    label: "Expertise",
+    label: "Our expertise",
     items: [
-      { label: "Detection & location", href: "/detection-reseaux-enterres/" },
-      { label: "Surveys & mapping", href: "/cartographie-reseaux/" },
+      { label: "Detection and location", href: "/detection-reseaux-enterres/" },
+      { label: "Mapping and georeferencing", href: "/cartographie-reseaux/" },
     ],
   },
   monitoring: { label: "GEORESEAUX Monitoring", href: "/monitoring/" },
@@ -72,7 +78,8 @@ export const home: typeof FR.home = {
     description: "Detection, location and mapping of underground networks in Mauritius, without destructive works. GEORESEAUX MAURITIUS supports site managers, property managers and businesses.",
   },
   hero: {
-    h1: "Detect. Locate. Map. Monitor.",
+    h1: "Detect. Locate. Map.",
+    cta: "Request a quote",
     body: "From locating buried networks to mapping and monitoring them, GEORESEAUX MAURITIUS helps site managers understand and keep track of their infrastructure.",
   },
   intro: {
@@ -121,6 +128,75 @@ export const home: typeof FR.home = {
     body: "Send us the information and plans available. GEORESEAUX MAURITIUS reviews your needs and defines the appropriate scope of work.",
   },
   cta: "Prepare my quote",
+};
+
+export const accueil: typeof FR.accueil = {
+  expertises: [
+    {
+      title: "Detection and",
+      accent: "location",
+      text: "Identify and locate buried networks and structures on site, without destructive works.",
+      image: "/img/accueil/detection-hero.png",
+      href: "/detection-reseaux-enterres/",
+    },
+    {
+      title: "Mapping and",
+      accent: "georeferencing",
+      text: "Turn field surveys into georeferenced plans and usable documents.",
+      image: "/img/accueil/patrimonial.png",
+      href: "/cartographie-reseaux/",
+    },
+  ],
+  more: "Learn more",
+  technologies: {
+    title: "Our",
+    accent: "technologies",
+    intro: "Non-destructive methods, chosen according to the site, the type of network and the expected result.",
+    items: [
+      { title: "Ground-penetrating radar", text: "Subsurface investigation and search for buried networks and structures.", image: "/img/technologies/georadar.jpg" },
+      { title: "Electromagnetic detection", text: "Locating and tracing networks detectable by electromagnetic methods.", image: "/img/technologies/detection-electromagnetique.jpg" },
+      { title: "Traceable sondes", text: "Locating and tracing pipes using suitable sondes.", image: "/img/technologies/sondes-tracables.jpg" },
+      { title: "Positioning and georeferencing", text: "GNSS position surveys to plot the detected networks on a plan.", image: "/img/technologies/positionnement-georeferencement.jpg" },
+    ],
+  },
+  secteurs: {
+    title: "Our",
+    accent: "sectors",
+    intro: "We support those who design, build, manage and operate sites.",
+    prev: "Previous sectors",
+    next: "Next sectors",
+    items: [
+      { title: "Property managers & condominiums", image: "/img/secteurs/syndics-coproprietes.jpg" },
+      { title: "Architects", image: "/img/secteurs/architectes.jpg" },
+      { title: "Developers & planners", image: "/img/secteurs/promoteurs-amenageurs.jpg" },
+      { title: "Civil engineering & utility contractors", image: "/img/secteurs/entreprises-tp-vrd.jpg" },
+      { title: "Local authorities", image: "/img/secteurs/collectivites.jpg" },
+      { title: "Industrial companies", image: "/img/secteurs/industriels.jpg" },
+      { title: "Hotels & establishments", image: "/img/secteurs/hotels-etablissements.jpg" },
+      { title: "Golf courses & sports complexes", image: "/img/secteurs/golfs-complexes-sportifs.jpg" },
+    ],
+  },
+  methodologie: {
+    title: "Our",
+    accent: "methodology",
+    intro: "From needs analysis to final deliverables, a 6-step approach.",
+  },
+  rapport: {
+    title: "Complete technical",
+    accent: "report",
+    imageAlt: "Example of a GEORESEAUX MAURITIUS intervention report",
+  },
+  exemples: {
+    title: "Examples of",
+    accent: "interventions",
+    intro: "A few types of assignments carried out for our clients.",
+    badge: "Example",
+    items: [
+      { tag: "Condominium", title: "Mapping a residence's networks before works", text: "Electromagnetic detection and GPR, ground marking and network plan handed to the property manager.", image: "/img/accueil/detection.png" },
+      { tag: "Civil works contractor", title: "Locating a pipe before excavation", text: "Route and depth survey to make trench opening safe.", image: "/img/detection/observation.png" },
+      { tag: "Site manager", title: "Georeferenced mapping of an irrigation network", text: "GNSS survey of valves, manholes and routes, integrated into a usable plan.", image: "/img/accueil/patrimonial.png" },
+    ],
+  },
 };
 
 export const detection: typeof FR.detection = {

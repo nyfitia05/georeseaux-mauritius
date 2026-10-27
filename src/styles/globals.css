@@ -209,3 +209,9 @@ footer.wl-footer .wlf-legal-mini .sep { margin: 0 8px; color: #c4c4cc; }
   footer.wl-footer .wlf-links { gap: 6px 22px; }
   footer.wl-footer .wlf-legal-mini .sep { margin: 0 5px; }
 }
+
+/* Accueil — carrousel "Nos secteurs d'intervention" : 1,3 carte visible sur
+   mobile, 2 sur tablette, 4 sur ordinateur (écart de 24 px entre cartes). */
+.sector-card { width: 78%; }
+@media (min-width: 640px) { .sector-card { width: calc((100% - 24px) / 2); } }
+@media (min-width: 1024px) { .sector-card { width: calc((100% - 72px) / 4); } }

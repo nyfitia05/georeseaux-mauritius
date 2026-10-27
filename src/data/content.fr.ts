@@ -61,8 +61,17 @@ export const footer = {
  * mails" / "Gestion des RDV" (qui n'apparaissaient sur aucune des 4
  * plaquettes) ont été retirés. */
 export const plateauTechnique = {
+  // Bloc refait en octobre 2026 sur le modèle du plateau technique de Water
+  // Leak Expert (bandeau sombre, "Nous gérons :", 3 lignes, téléphone + CTA).
+  // Horaires alignés sur Water Leak Expert et la maquette : lundi → samedi.
   heading: "Plateau technique",
-  item: { label: "Gestion des appels", detail: "du Lundi au vendredi 8h – 19h" },
+  headingAccent: "technique",
+  intro: "Nous gérons :",
+  items: [
+    { label: "Gestion des appels", detail: "du lundi au samedi 8h – 19h" },
+    { label: "Gestion des mails", detail: "7/7 jours" },
+    { label: "Gestion des RDV", detail: "dans la journée" },
+  ],
   cta: "Demander un devis",
 };
 
@@ -106,7 +115,7 @@ export const pillars: CardItem[] = [
 export const nav = {
   accueil: { label: "Accueil", href: "/" },
   expertises: {
-    label: "Expertises",
+    label: "Nos expertises",
     // Réduit à 3 entrées (Détection & localisation, Relevés & cartographie,
     // GEORESEAUX Monitoring) pour refléter dans le menu principal la même
     // réduction déjà appliquée à la vitrine "Nos expertises" de l'accueil,
@@ -114,8 +123,8 @@ export const nav = {
     // 3 piliers. "Cartographie patrimoniale" garde sa page dédiée (route
     // toujours active) mais n'est plus listée dans ce menu déroulant.
     items: [
-      { label: "Détection & localisation", href: "/detection-reseaux-enterres/" },
-      { label: "Relevés & cartographie", href: "/cartographie-reseaux/" },
+      { label: "Détection et localisation", href: "/detection-reseaux-enterres/" },
+      { label: "Cartographie et géoréférencement", href: "/cartographie-reseaux/" },
       // "GEORESEAUX Monitoring" retiré du menu (08/10/2026) : le monitoring
       // est désormais présenté sur le site Water Leak Equipment.
     ],
@@ -163,7 +172,8 @@ export const home = {
     // bon contenu ni le bon endroit. La plaquette n'a aucune liste dans le
     // hero — la vraie liste de secteurs (11 items) est une bannière séparée,
     // juste sous les 3 cartes ; voir `audiences` ci-dessous.
-    h1: "Détecter. Localiser. Cartographier. Surveiller.",
+    h1: "Détecter. Localiser. Cartographier.",
+    cta: "Demander un devis",
     body: "De la recherche des réseaux enterrés à leur cartographie et à leur surveillance, GEORESEAUX MAURITIUS accompagne les gestionnaires de sites dans la connaissance et le suivi de leurs infrastructures.",
   },
   // Bloc des 3 cartes juste sous le hero — pas de titre de section au-dessus
@@ -231,6 +241,116 @@ export const home = {
     body: "Transmettez-nous les informations et plans disponibles. GEORESEAUX MAURITIUS étudie votre besoin et définit le périmètre d'intervention adapté.",
   },
   cta: "Préparer mon devis",
+};
+
+// ---------------------------------------------------------------------------
+// 2 bis. Accueil — sections de la maquette d'octobre 2026
+// ---------------------------------------------------------------------------
+// Deux cartes expertises, Nos technologies (4), Nos secteurs d'intervention
+// (carrousel), Notre méthodologie (étapes reprises de `methodologie`), Rapport
+// technique complet (liste reprise de `detection.rapport`) et Exemples
+// d'interventions. Photos des secteurs et de 2 technologies : Pexels (licence
+// libre, sans attribution obligatoire) — public/img/secteurs, img/technologies.
+export const accueil = {
+  expertises: [
+    {
+      title: "Détection et",
+      accent: "localisation",
+      text: "Identifier et localiser les réseaux et ouvrages enterrés sur le terrain, sans travaux destructifs.",
+      image: "/img/accueil/detection-hero.png",
+      href: "/detection-reseaux-enterres/",
+    },
+    {
+      title: "Cartographie et",
+      accent: "géoréférencement",
+      text: "Transformer les relevés terrain en plans géoréférencés et en documents exploitables.",
+      image: "/img/accueil/patrimonial.png",
+      href: "/cartographie-reseaux/",
+    },
+  ],
+  more: "En savoir plus",
+  technologies: {
+    title: "Nos",
+    accent: "technologies",
+    intro: "Des méthodes non destructives, choisies selon le site, la nature des réseaux et le résultat attendu.",
+    items: [
+      {
+        title: "Géoradar",
+        text: "Investigation du sous-sol et recherche des réseaux et ouvrages enterrés.",
+        image: "/img/technologies/georadar.jpg",
+      },
+      {
+        title: "Détection électromagnétique",
+        text: "Repérage et suivi des réseaux détectables par méthode électromagnétique.",
+        image: "/img/technologies/detection-electromagnetique.jpg",
+      },
+      {
+        title: "Sondes traçables",
+        text: "Localisation et suivi de canalisations à l'aide de sondes adaptées.",
+        image: "/img/technologies/sondes-tracables.jpg",
+      },
+      {
+        title: "Positionnement et géoréférencement",
+        text: "Relevé des positions par GNSS pour reporter les réseaux détectés sur plan.",
+        image: "/img/technologies/positionnement-georeferencement.jpg",
+      },
+    ],
+  },
+  secteurs: {
+    title: "Nos secteurs",
+    accent: "d'intervention",
+    intro: "Nous accompagnons les acteurs qui conçoivent, construisent, gèrent et exploitent des sites.",
+    prev: "Secteurs précédents",
+    next: "Secteurs suivants",
+    items: [
+      { title: "Syndics & copropriétés", image: "/img/secteurs/syndics-coproprietes.jpg" },
+      { title: "Architectes", image: "/img/secteurs/architectes.jpg" },
+      { title: "Promoteurs & aménageurs", image: "/img/secteurs/promoteurs-amenageurs.jpg" },
+      { title: "Entreprises TP/VRD", image: "/img/secteurs/entreprises-tp-vrd.jpg" },
+      { title: "Collectivités", image: "/img/secteurs/collectivites.jpg" },
+      { title: "Industriels", image: "/img/secteurs/industriels.jpg" },
+      { title: "Hôtels & établissements", image: "/img/secteurs/hotels-etablissements.jpg" },
+      { title: "Golfs & complexes sportifs", image: "/img/secteurs/golfs-complexes-sportifs.jpg" },
+    ],
+  },
+  methodologie: {
+    title: "Notre",
+    accent: "méthodologie",
+    intro: "De l'analyse du besoin à la restitution, une démarche en 6 étapes.",
+  },
+  rapport: {
+    title: "Rapport technique",
+    accent: "complet",
+    imageAlt: "Exemple de rapport d'intervention GEORESEAUX MAURITIUS",
+  },
+  exemples: {
+    title: "Exemples",
+    accent: "d'interventions",
+    intro: "Quelques types de missions menées pour nos clients.",
+    // Étiquette visible tant que ce ne sont pas des chantiers réels
+    // documentés : à retirer (badge: "") quand les vrais cas seront fournis.
+    badge: "Exemple",
+    items: [
+      {
+        tag: "Copropriété",
+        title: "Repérage des réseaux d'une résidence avant travaux",
+        text: "Détection électromagnétique et géoradar, marquage au sol et plan des réseaux remis au syndic.",
+        image: "/img/accueil/detection.png",
+      },
+      {
+        tag: "Entreprise TP/VRD",
+        title: "Localisation d'une canalisation avant terrassement",
+        text: "Recherche du tracé et de la profondeur pour sécuriser l'ouverture de tranchée.",
+        image: "/img/detection/observation.png",
+      },
+      {
+        tag: "Gestionnaire de site",
+        title: "Cartographie géoréférencée d'un réseau d'irrigation",
+        text: "Relevé GNSS des vannes, regards et tracés, intégré dans un plan exploitable.",
+        image: "/img/accueil/patrimonial.png",
+      },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------

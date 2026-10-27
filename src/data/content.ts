@@ -22,6 +22,7 @@ export const positioning = c.positioning;
 export const pillars = c.pillars;
 export const nav = c.nav;
 export const home = c.home;
+export const accueil = c.accueil;
 export const detection = c.detection;
 export const releves = c.releves;
 export const cartographiePatrimoniale = c.cartographiePatrimoniale;
