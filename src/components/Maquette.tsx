@@ -1,12 +1,10 @@
 import { useRef, type ReactNode } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Check, ChevronLeft, ChevronRight, ChevronRight as Sep } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { EASE_SIGNATURE } from "@/animations/variants";
 import { cn } from "@/lib/utils";
-import { t } from "@/lib/lang";
 
 /**
  * Briques communes aux pages refaites d'après les maquettes d'octobre 2026
@@ -150,10 +148,9 @@ const stage = (delay: number) => ({
   transition: { duration: 0.75, delay, ease: EASE_SIGNATURE },
 });
 
-/** Hero des pages expertises : fil d'Ariane, titre 2 lignes (2e en jaune),
+/** Hero des pages expertises (sans fil d'Ariane, demande client) : titre 2 lignes (2e en jaune),
  * sous-titre, texte, bouton "Demander un devis". */
 export function ExpertiseHero({
-  crumbs,
   title,
   accent,
   subtitle,
@@ -162,7 +159,6 @@ export function ExpertiseHero({
   imagePosition = "center",
   cta,
 }: {
-  crumbs: { label: string; href?: string }[];
   title: string;
   accent: string;
   subtitle?: string;
@@ -183,22 +179,6 @@ export function ExpertiseHero({
       <div className="absolute inset-0 bg-gradient-to-r from-[#0b1a3d]/95 via-[#0b1a3d]/65 to-transparent" />
       <Container className="relative">
         <div className="max-w-3xl">
-          <nav aria-label={t("Fil d'Ariane", "Breadcrumb")} className="mb-4">
-            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/90">
-              {crumbs.map((c, i) => (
-                <li key={c.label} className="flex items-center gap-1.5">
-                  {i > 0 && <Sep className="h-3.5 w-3.5 text-white/70" aria-hidden />}
-                  {c.href ? (
-                    <Link to={c.href} className="hover:text-yellow-500">
-                      {c.label}
-                    </Link>
-                  ) : (
-                    <span aria-current="page">{c.label}</span>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </nav>
           <motion.h1
             {...stage(0.1)}
             className="font-display text-[34px] font-extrabold leading-[1.08] tracking-[-0.01em] text-white sm:text-5xl lg:text-[58px]"

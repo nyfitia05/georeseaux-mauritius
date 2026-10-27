@@ -15,11 +15,6 @@ export default function CartographieReseaux() {
       <Seo title={releves.seo.title} description={releves.seo.description} />
 
       <ExpertiseHero
-        crumbs={[
-          { label: nav.accueil.label, href: "/" },
-          { label: nav.expertises.label },
-          { label: p.crumb },
-        ]}
         title={p.hero.title}
         accent={p.hero.accent}
         subtitle={p.hero.subtitle}

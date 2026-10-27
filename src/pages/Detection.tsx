@@ -21,11 +21,6 @@ export default function Detection() {
       <Seo title={detection.seo.title} description={detection.seo.description} />
 
       <ExpertiseHero
-        crumbs={[
-          { label: nav.accueil.label, href: "/" },
-          { label: nav.expertises.label },
-          { label: p.crumb },
-        ]}
         title={p.hero.title}
         accent={p.hero.accent}
         body={p.hero.body}
