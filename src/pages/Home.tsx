@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Seo } from "@/components/Seo";
@@ -6,103 +6,125 @@ import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 import { HomeHero } from "@/sections/HomeHero";
 import { PlateauTechnique } from "@/sections/PlateauTechnique";
-import { CtaBanner } from "@/sections/CtaBanner";
-import { accueil, detection, home, methodologie, nav } from "@/data/content";
+import { accueil, home } from "@/data/content";
 import { cn } from "@/lib/utils";
 
-// Accueil refait en octobre 2026 d'après la maquette transmise par le client :
-// hero, 2 cartes expertises, Nos technologies, Nos secteurs d'intervention
-// (carrousel à flèches), Notre méthodologie, Plateau technique, Rapport
-// technique complet, Exemples d'interventions, bandeau de fin.
+// Accueil reproduit d'après la maquette transmise par le client (octobre
+// 2026) — même structure, même design, mêmes textes — avec ses modifications :
+// en-tête réduit, hero sur une ligne + "Demander un devis", bloc "Un service
+// complet" retiré, flèches sur les secteurs, plateau technique séparé et placé
+// au-dessus du rapport, bouton "Voir un exemple de rapport" retiré.
 
-/** Titre de section en deux couleurs : texte bleu nuit + mot d'accent
- * surligné en jaune (le jaune seul sur fond blanc n'est pas lisible). */
-function TwoToneTitle({
-  title,
-  accent,
-  className,
-  as: Tag = "h2",
-}: {
-  title: string;
-  accent: string;
-  className?: string;
-  as?: "h2" | "h3";
-}) {
+const titleBlue = "text-blue-700";
+const accentYellow = "text-yellow-600";
+
+/** Titre en deux couleurs, comme sur la maquette : bleu + jaune. */
+function Title({ title, accent, light = false }: { title: string; accent: string; light?: boolean }) {
   return (
-    <Tag className={cn("font-display font-bold leading-tight text-blue-900", className)}>
-      {title}{" "}
-      <span className="px-0.5" style={accentStyle}>
-        {accent}
-      </span>
-    </Tag>
+    <h2
+      className={cn(
+        "font-display text-[28px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[38px]",
+        light ? "text-white" : titleBlue,
+      )}
+    >
+      {title} <span className={light ? "text-yellow-500" : accentYellow}>{accent}</span>
+    </h2>
   );
 }
 
-// Surlignage jaune sous le mot d'accent (style en ligne : plus fiable qu'une
-// classe arbitraire Tailwind contenant des virgules).
-const accentStyle = {
-  backgroundImage: "linear-gradient(transparent 58%, #FFD409 58%, #FFD409 92%, transparent 92%)",
-};
+/** Rangée défilante avec une flèche jaune à gauche et à droite. */
+function Carousel({
+  children,
+  prev,
+  next,
+  className,
+}: {
+  children: ReactNode;
+  prev: string;
+  next: string;
+  className?: string;
+}) {
+  const track = useRef<HTMLDivElement>(null);
+  const scroll = (dir: 1 | -1) => {
+    const el = track.current;
+    if (!el) return;
+    const first = el.firstElementChild as HTMLElement | null;
+    const step = first ? first.offsetWidth + 16 : el.clientWidth * 0.8;
+    const perView = Math.max(1, Math.floor((el.clientWidth + 16) / step));
+    el.scrollBy({ left: dir * step * perView, behavior: "smooth" });
+  };
+  const arrow =
+    "absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-yellow-500 text-blue-900 shadow-[0_6px_18px_rgba(16,29,64,0.25)] transition-transform hover:scale-105";
+  return (
+    <div className={cn("relative", className)}>
+      <button type="button" onClick={() => scroll(-1)} aria-label={prev} className={cn(arrow, "-left-2 sm:-left-5")}>
+        <ChevronLeft className="h-6 w-6" strokeWidth={2.6} aria-hidden />
+      </button>
+      <div
+        ref={track}
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {children}
+      </div>
+      <button type="button" onClick={() => scroll(1)} aria-label={next} className={cn(arrow, "-right-2 sm:-right-5")}>
+        <ChevronRight className="h-6 w-6" strokeWidth={2.6} aria-hidden />
+      </button>
+    </div>
+  );
+}
 
-const sectionTitle = "text-[28px] sm:text-4xl";
+const card = "bg-[#F3F6FC] shadow-[0_6px_20px_rgba(16,29,64,0.06)]";
 
 function Expertises() {
   return (
-    <section className="bg-paper py-16 lg:py-20">
-      <Container>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {accueil.expertises.map((item, i) => (
-            <Reveal key={item.href} delay={i * 0.08}>
-              <article className="group flex h-full flex-col bg-white shadow-[0_10px_30px_rgba(16,29,64,0.07)]">
-                <div className="aspect-[16/9] overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt=""
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+    <section className="bg-white pb-6 pt-8 lg:pt-10">
+      <Container className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+        {accueil.expertises.map((item, i) => (
+          <Reveal key={item.href} delay={i * 0.08}>
+            <article className={cn(card, "flex h-full flex-col sm:flex-row")}>
+              <div className="aspect-[16/10] overflow-hidden sm:aspect-auto sm:w-[44%] sm:flex-none">
+                <img src={item.image} alt="" loading="lazy" className="h-full w-full object-cover" />
+              </div>
+              <div className="flex flex-1 flex-col p-6 lg:p-7">
+                <h3 className={cn("font-display text-[22px] font-bold leading-tight lg:text-2xl", titleBlue)}>
+                  {item.title}
+                  <span className={cn("block", accentYellow)}>{item.accent}</span>
+                </h3>
+                <p className="mt-3 flex-1 text-base text-ink-soft">{item.text}</p>
+                <div className="mt-5">
+                  <Link
+                    to={item.href}
+                    className="inline-flex items-center gap-2.5 rounded-full bg-yellow-500 px-5 py-2.5 text-sm font-bold text-blue-900 transition-colors hover:bg-yellow-400"
+                  >
+                    {accueil.more}
+                    <ArrowRight className="h-4 w-4" strokeWidth={2.5} aria-hidden />
+                  </Link>
                 </div>
-                <div className="flex flex-1 flex-col p-7 sm:p-8">
-                  <TwoToneTitle as="h3" title={item.title} accent={item.accent} className="text-2xl sm:text-[28px]" />
-                  <p className="mt-4 flex-1 text-lg text-ink-soft">{item.text}</p>
-                  <div className="mt-7">
-                    <Link
-                      to={item.href}
-                      className="inline-flex items-center gap-2 rounded-full bg-yellow-500 px-6 py-3 font-semibold text-blue-900 transition-colors hover:bg-yellow-400"
-                    >
-                      {accueil.more}
-                      <ArrowRight className="h-4 w-4" strokeWidth={2.5} aria-hidden />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+              </div>
+            </article>
+          </Reveal>
+        ))}
       </Container>
     </section>
   );
 }
 
 function Technologies() {
-  const { title, accent, intro, items } = accueil.technologies;
+  const { title, accent, items } = accueil.technologies;
   return (
-    <section className="bg-paper-tint py-16 lg:py-20">
+    <section className="bg-white py-8">
       <Container>
-        <Reveal className="mb-10 max-w-2xl">
-          <TwoToneTitle title={title} accent={accent} className={sectionTitle} />
-          <p className="mt-4 text-lg text-ink-soft">{intro}</p>
-        </Reveal>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Title title={title} accent={accent} />
+        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.06}>
-              <article className="flex h-full flex-col bg-white">
-                <div className="aspect-[3/2] overflow-hidden bg-blue-50">
+            <Reveal key={item.title} delay={i * 0.05}>
+              <article className={cn(card, "flex h-full flex-col")}>
+                <div className="aspect-[3/2] overflow-hidden">
                   <img src={item.image} alt={item.title} loading="lazy" className="h-full w-full object-cover" />
                 </div>
-                <div className="flex-1 border-t-4 border-yellow-500 p-6">
-                  <h3 className="font-display text-lg font-bold leading-snug text-blue-900">{item.title}</h3>
-                  <p className="mt-2.5 text-base text-ink-soft">{item.text}</p>
+                <div className="p-5">
+                  <h3 className="font-display text-base font-bold leading-snug text-blue-600">{item.title}</h3>
+                  <p className="mt-1.5 text-[15px] leading-snug text-ink-soft">{item.text}</p>
                 </div>
               </article>
             </Reveal>
@@ -114,130 +136,129 @@ function Technologies() {
 }
 
 function Secteurs() {
-  const { title, accent, intro, items, prev, next } = accueil.secteurs;
-  const track = useRef<HTMLDivElement>(null);
-
-  // Défile d'une "page" visible (moins une carte de recouvrement).
-  const scroll = (dir: 1 | -1) => {
-    const el = track.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>("[data-card]");
-    const step = card ? card.offsetWidth + 24 : el.clientWidth * 0.8;
-    const perView = Math.max(1, Math.floor(el.clientWidth / step));
-    el.scrollBy({ left: dir * step * perView, behavior: "smooth" });
-  };
-
-  const arrow =
-    "flex h-12 w-12 items-center justify-center rounded-full border-2 border-blue-900 text-blue-900 transition-colors hover:bg-blue-900 hover:text-white";
-
+  const { title, accent, items, prev, next } = accueil.secteurs;
   return (
-    <section className="bg-paper py-16 lg:py-20">
+    <section className="bg-white py-8">
       <Container>
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-          <Reveal className="max-w-2xl">
-            <TwoToneTitle title={title} accent={accent} className={sectionTitle} />
-            <p className="mt-4 text-lg text-ink-soft">{intro}</p>
-          </Reveal>
-          <div className="flex gap-3">
-            <button type="button" className={arrow} onClick={() => scroll(-1)} aria-label={prev}>
-              <ChevronLeft className="h-6 w-6" strokeWidth={2.4} aria-hidden />
-            </button>
-            <button type="button" className={arrow} onClick={() => scroll(1)} aria-label={next}>
-              <ChevronRight className="h-6 w-6" strokeWidth={2.4} aria-hidden />
-            </button>
-          </div>
-        </div>
-
-        <div
-          ref={track}
-          className="-mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-6 pb-2 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0 [&::-webkit-scrollbar]:hidden"
-        >
+        <Title title={title} accent={accent} />
+        <Carousel prev={prev} next={next} className="mt-5">
           {items.map((item) => (
-            <article
-              key={item.title}
-              data-card
-              className="group relative sector-card aspect-[4/5] flex-none snap-start overflow-hidden"
-            >
-              <img
-                src={item.image}
-                alt=""
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/20 to-transparent" />
-              <h3 className="absolute inset-x-0 bottom-0 p-6 font-display text-xl font-bold leading-snug text-white">
-                <span className="mb-3 block h-1 w-10 bg-yellow-500" aria-hidden />
-                {item.title}
-              </h3>
+            <article key={item.title} className={cn(card, "home-slide-6 flex-none snap-start")}>
+              <div className="aspect-[5/3] overflow-hidden">
+                <img src={item.image} alt="" loading="lazy" className="h-full w-full object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-display text-[15px] font-bold leading-snug text-blue-600">{item.title}</h3>
+                <p className="mt-1 text-sm leading-snug text-ink-soft">{item.text}</p>
+              </div>
             </article>
           ))}
-        </div>
+        </Carousel>
       </Container>
     </section>
   );
 }
 
 function Methodologie() {
-  const { title, accent, intro } = accueil.methodologie;
+  const { title, accent, steps } = accueil.methodologie;
   return (
-    <section className="bg-paper-tint py-16 lg:py-20">
+    <section className="bg-white py-8">
       <Container>
-        <Reveal className="mb-12 max-w-2xl">
-          <TwoToneTitle title={title} accent={accent} className={sectionTitle} />
-          <p className="mt-4 text-lg text-ink-soft">{intro}</p>
-        </Reveal>
-        <ol className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {methodologie.steps.map((step, i) => (
-            <li key={step.number}>
-              <Reveal delay={(i % 3) * 0.06} className="flex gap-5">
-                <span className="flex h-14 w-14 flex-none items-center justify-center rounded-full bg-blue-900 font-display text-lg font-bold text-yellow-500">
-                  {step.number}
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-blue-900">{step.title}</h3>
-                  <p className="mt-1.5 text-base text-ink-soft">{step.text}</p>
+        <div className={cn(card, "px-6 py-7 lg:px-8")}>
+          <Title title={title} accent={accent} />
+          <ol className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-4">
+            {steps.map((step, i) => (
+              <li key={step.number} className="relative">
+                <div className="flex items-center">
+                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-yellow-500 font-display text-base font-bold text-blue-900">
+                    {step.number}
+                  </span>
+                  {i < steps.length - 1 && (
+                    <ArrowRight className="mx-auto hidden h-5 w-5 text-blue-200 lg:block" strokeWidth={2} aria-hidden />
+                  )}
                 </div>
-              </Reveal>
-            </li>
-          ))}
-        </ol>
+                <h3 className={cn("mt-3 font-display text-base font-bold", titleBlue)}>{step.title}</h3>
+                <p className="mt-1 text-[15px] leading-snug text-ink-soft">{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </Container>
     </section>
   );
 }
 
-function Rapport() {
-  const { title, accent, imageAlt } = accueil.rapport;
+/** Une page de rapport stylisée (fond blanc, ombre), pour le visuel. */
+function ReportPage({ children }: { children: ReactNode }) {
   return (
-    <section className="bg-paper py-16 lg:py-20">
-      <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+    <div className="aspect-[1/1.414] overflow-hidden bg-white p-3 shadow-[0_10px_30px_rgba(16,29,64,0.18)] ring-1 ring-blue-100">
+      {children}
+    </div>
+  );
+}
+
+function Rapport() {
+  const { title, accent, intro, items, coverTitle, coverFields, imageAlt } = accueil.rapport;
+  const line = "h-1 rounded bg-blue-100";
+  return (
+    <section className="bg-white py-12 lg:py-14">
+      <Container className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
         <Reveal>
-          <TwoToneTitle title={title} accent={accent} className={sectionTitle} />
-          <p className="mt-5 text-lg text-ink">{detection.rapport.intro}</p>
-          <ul className="mt-6 flex flex-col gap-3">
-            {detection.rapport.items.map((item) => (
+          <Title title={title} accent={accent} />
+          <p className="mt-4 text-base text-ink">{intro}</p>
+          <ul className="mt-4 flex flex-col gap-2.5">
+            {items.map((item) => (
               <li key={item} className="flex items-start gap-3 text-base text-ink">
-                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-yellow-500">
-                  <Check className="h-3.5 w-3.5 text-blue-900" strokeWidth={3} aria-hidden />
+                <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-yellow-500">
+                  <Check className="h-3 w-3 text-white" strokeWidth={3.5} aria-hidden />
                 </span>
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </Reveal>
-        <Reveal delay={0.1} className="relative mx-auto w-full max-w-[560px]">
-          <img
-            src="/img/accueil/restitution.png"
-            alt=""
-            loading="lazy"
-            className="w-full shadow-[0_20px_50px_rgba(16,29,64,0.18)]"
-          />
-          <img
-            src="/img/detection/rapport-intervention.png"
-            alt={imageAlt}
-            loading="lazy"
-            className="absolute -bottom-8 -left-4 w-[42%] border-4 border-white shadow-[0_20px_50px_rgba(16,29,64,0.25)] sm:-left-8"
-          />
+
+        <Reveal delay={0.1}>
+          <div className="grid grid-cols-3 gap-3 sm:gap-5" role="img" aria-label={imageAlt}>
+            <ReportPage>
+              <img src="/img/Logolong.png" alt="" className="h-4 w-auto sm:h-5" />
+              <p className="mt-6 font-display text-[9px] font-bold text-blue-900 sm:text-[11px]">{coverTitle}</p>
+              <div className="mt-4 flex flex-col gap-2">
+                {coverFields.map((f) => (
+                  <div key={f} className="flex items-end gap-1 text-[7px] text-ink-soft sm:text-[9px]">
+                    {f}
+                    <span className="mb-0.5 h-px flex-1 bg-blue-100" />
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 grid grid-cols-2 gap-1">
+                <img src="/img/exemples/voirie-urbaine.jpg" alt="" className="aspect-[4/3] w-full object-cover" />
+                <img src="/img/technologies/georadar.jpg" alt="" className="aspect-[4/3] w-full object-cover" />
+              </div>
+            </ReportPage>
+            <ReportPage>
+              <div className={cn(line, "w-2/3")} />
+              <div className={cn(line, "mt-1.5 w-1/2")} />
+              <img src="/img/accueil/patrimonial.png" alt="" className="mt-3 aspect-square w-full object-cover" />
+              <div className="mt-3 flex flex-col gap-1.5">
+                <div className={line} />
+                <div className={cn(line, "w-5/6")} />
+                <div className={cn(line, "w-2/3")} />
+              </div>
+            </ReportPage>
+            <ReportPage>
+              <div className="flex flex-col gap-1.5">
+                <div className={line} />
+                <div className={cn(line, "w-5/6")} />
+                <div className={cn(line, "w-3/4")} />
+              </div>
+              <img src="/img/carte.png" alt="" className="mt-3 aspect-square w-full object-cover" />
+              <div className="mt-3 flex flex-col gap-1.5">
+                <div className={cn(line, "w-4/5")} />
+                <div className={cn(line, "w-1/2")} />
+              </div>
+            </ReportPage>
+          </div>
         </Reveal>
       </Container>
     </section>
@@ -245,35 +266,25 @@ function Rapport() {
 }
 
 function Exemples() {
-  const { title, accent, intro, badge, items } = accueil.exemples;
+  const { title, accent, intro, items, prev, next } = accueil.exemples;
   return (
-    <section className="bg-paper-tint py-16 lg:py-20">
+    <section className="bg-[#0f2a5c] py-12 lg:py-14">
       <Container>
-        <Reveal className="mb-10 max-w-2xl">
-          <TwoToneTitle title={title} accent={accent} className={sectionTitle} />
-          <p className="mt-4 text-lg text-ink-soft">{intro}</p>
-        </Reveal>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {items.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.06}>
-              <article className="flex h-full flex-col bg-white">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img src={item.image} alt="" loading="lazy" className="h-full w-full object-cover" />
-                  {badge && (
-                    <span className="absolute left-4 top-4 bg-white/90 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-ink-soft">
-                      {badge}
-                    </span>
-                  )}
-                </div>
-                <div className="flex-1 p-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-blue-500">{item.tag}</p>
-                  <h3 className="mt-2 font-display text-lg font-bold leading-snug text-blue-900">{item.title}</h3>
-                  <p className="mt-2.5 text-base text-ink-soft">{item.text}</p>
-                </div>
-              </article>
-            </Reveal>
+        <Title title={title} accent={accent} light />
+        <p className="mt-2 text-lg text-white/90">{intro}</p>
+        <Carousel prev={prev} next={next} className="mt-6">
+          {items.map((item) => (
+            <article key={item.title} className="home-slide-6 flex-none snap-start bg-white">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src={item.image} alt="" loading="lazy" className="h-full w-full object-cover" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-display text-[15px] font-bold text-blue-600">{item.title}</h3>
+                <p className="mt-0.5 text-sm text-ink-soft">{item.text}</p>
+              </div>
+            </article>
           ))}
-        </div>
+        </Carousel>
       </Container>
     </section>
   );
@@ -291,13 +302,6 @@ export default function Home() {
       <PlateauTechnique />
       <Rapport />
       <Exemples />
-      <CtaBanner
-        label={home.cta}
-        to={nav.devisExpressCta.href}
-        heading={home.closing.heading}
-        subtitle={home.closing.body}
-        withCallback={false}
-      />
     </>
   );
 }

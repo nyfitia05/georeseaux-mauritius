@@ -64,8 +64,8 @@ export const plateauTechnique = {
   // Bloc refait en octobre 2026 sur le modèle du plateau technique de Water
   // Leak Expert (bandeau sombre, "Nous gérons :", 3 lignes, téléphone + CTA).
   // Horaires alignés sur Water Leak Expert et la maquette : lundi → samedi.
-  heading: "Plateau technique",
-  headingAccent: "technique",
+  heading: "Notre plateau technique",
+  headingAccent: "plateau technique",
   intro: "Nous gérons :",
   items: [
     { label: "Gestion des appels", detail: "du lundi au samedi 8h – 19h" },
@@ -252,18 +252,25 @@ export const home = {
 // d'interventions. Photos des secteurs et de 2 technologies : Pexels (licence
 // libre, sans attribution obligatoire) — public/img/secteurs, img/technologies.
 export const accueil = {
+  // Textes repris mot pour mot de la maquette (octobre 2026), sauf les
+  // modifications demandées par le client (hero, bloc "Un service complet"
+  // retiré, bouton "Voir un exemple de rapport" retiré).
+  hero: {
+    subtitle: "La connaissance de vos réseaux enterrés à Maurice et Rodrigues.",
+    body: "Détection, géoréférencement et cartographie des réseaux enterrés pour sécuriser vos projets et optimiser la gestion de vos infrastructures.",
+  },
   expertises: [
     {
-      title: "Détection et",
-      accent: "localisation",
-      text: "Identifier et localiser les réseaux et ouvrages enterrés sur le terrain, sans travaux destructifs.",
-      image: "/img/accueil/detection-hero.png",
+      title: "Détection et localisation",
+      accent: "des réseaux enterrés",
+      text: "Identifier et localiser les réseaux existants sur le terrain, sans travaux destructifs.",
+      image: "/img/accueil/hero.png",
       href: "/detection-reseaux-enterres/",
     },
     {
       title: "Cartographie et",
       accent: "géoréférencement",
-      text: "Transformer les relevés terrain en plans géoréférencés et en documents exploitables.",
+      text: "Transformer les relevés terrain en plans numériques précis et exploitables.",
       image: "/img/accueil/patrimonial.png",
       href: "/cartographie-reseaux/",
     },
@@ -272,7 +279,6 @@ export const accueil = {
   technologies: {
     title: "Nos",
     accent: "technologies",
-    intro: "Des méthodes non destructives, choisies selon le site, la nature des réseaux et le résultat attendu.",
     items: [
       {
         title: "Géoradar",
@@ -281,17 +287,17 @@ export const accueil = {
       },
       {
         title: "Détection électromagnétique",
-        text: "Repérage et suivi des réseaux détectables par méthode électromagnétique.",
+        text: "Repérage et suivi des réseaux métalliques et non métalliques.",
         image: "/img/technologies/detection-electromagnetique.jpg",
       },
       {
         title: "Sondes traçables",
-        text: "Localisation et suivi de canalisations à l'aide de sondes adaptées.",
+        text: "Localisation des canalisations et ouvrages non détectables par méthodes électromagnétiques.",
         image: "/img/technologies/sondes-tracables.jpg",
       },
       {
         title: "Positionnement et géoréférencement",
-        text: "Relevé des positions par GNSS pour reporter les réseaux détectés sur plan.",
+        text: "Relevés précis GPS/GNSS et intégration dans un système de coordonnées.",
         image: "/img/technologies/positionnement-georeferencement.jpg",
       },
     ],
@@ -299,56 +305,60 @@ export const accueil = {
   secteurs: {
     title: "Nos secteurs",
     accent: "d'intervention",
-    intro: "Nous accompagnons les acteurs qui conçoivent, construisent, gèrent et exploitent des sites.",
     prev: "Secteurs précédents",
     next: "Secteurs suivants",
     items: [
-      { title: "Syndics & copropriétés", image: "/img/secteurs/syndics-coproprietes.jpg" },
-      { title: "Architectes", image: "/img/secteurs/architectes.jpg" },
-      { title: "Promoteurs & aménageurs", image: "/img/secteurs/promoteurs-amenageurs.jpg" },
-      { title: "Entreprises TP/VRD", image: "/img/secteurs/entreprises-tp-vrd.jpg" },
-      { title: "Collectivités", image: "/img/secteurs/collectivites.jpg" },
-      { title: "Industriels", image: "/img/secteurs/industriels.jpg" },
-      { title: "Hôtels & établissements", image: "/img/secteurs/hotels-etablissements.jpg" },
-      { title: "Golfs & complexes sportifs", image: "/img/secteurs/golfs-complexes-sportifs.jpg" },
+      { title: "Syndics & copropriétés", text: "Réseaux et ouvrages des résidences", image: "/img/secteurs/syndics-coproprietes.jpg" },
+      { title: "Architectes", text: "Préparation de projets et études", image: "/img/secteurs/architectes.jpg" },
+      { title: "Promoteurs & aménageurs", text: "Sécurisation des chantiers et levés de réseaux", image: "/img/secteurs/promoteurs-amenageurs.jpg" },
+      { title: "Entreprises TP / VRD", text: "Identification des réseaux existants", image: "/img/secteurs/entreprises-tp-vrd.jpg" },
+      { title: "Collectivités", text: "Gestion et mise à jour du patrimoine", image: "/img/secteurs/collectivites.jpg" },
+      { title: "Industriels", text: "Sites techniques et réseaux complexes", image: "/img/secteurs/industriels.jpg" },
+      { title: "Hôtels & établissements", text: "Infrastructures et réseaux sur sites touristiques", image: "/img/secteurs/hotels-etablissements.jpg" },
+      { title: "Golfs & complexes sportifs", text: "Réseaux d'arrosage et aménagements", image: "/img/secteurs/golfs-complexes-sportifs.jpg" },
     ],
   },
   methodologie: {
     title: "Notre",
     accent: "méthodologie",
-    intro: "De l'analyse du besoin à la restitution, une démarche en 6 étapes.",
+    steps: [
+      { number: "01", title: "Analyse", text: "Comprendre le besoin, le site et les contraintes." },
+      { number: "02", title: "Préparation", text: "Collecter les informations disponibles et définir les moyens d'investigation." },
+      { number: "03", title: "Investigation terrain", text: "Détecter et localiser les réseaux et ouvrages." },
+      { number: "04", title: "Traitement", text: "Exploiter et structurer les données collectées." },
+      { number: "05", title: "Cartographie", text: "Produire des plans clairs et géoréférencés." },
+      { number: "06", title: "Restitution", text: "Remettre un rapport complet et des documents exploitables." },
+    ] satisfies StepItem[],
   },
   rapport: {
-    title: "Rapport technique",
+    title: "Un rapport technique",
     accent: "complet",
-    imageAlt: "Exemple de rapport d'intervention GEORESEAUX MAURITIUS",
+    intro: "Chaque intervention fait l'objet d'un rapport clair et détaillé, comprenant :",
+    items: [
+      "Les réseaux et ouvrages détectés et localisés",
+      "Les méthodes et équipements utilisés",
+      "Les photos et repères terrain",
+      "Les plans et cartographies géoréférencés",
+      "Les profondeurs lorsque celles-ci peuvent être déterminées",
+      "Les conclusions techniques et préconisations éventuelles",
+    ],
+    coverTitle: "RAPPORT D'INTERVENTION",
+    coverFields: ["Projet :", "Site :", "Date :"],
+    imageAlt: "Pages d'un rapport d'intervention GEORESEAUX MAURITIUS",
   },
   exemples: {
     title: "Exemples",
     accent: "d'interventions",
-    intro: "Quelques types de missions menées pour nos clients.",
-    // Étiquette visible tant que ce ne sont pas des chantiers réels
-    // documentés : à retirer (badge: "") quand les vrais cas seront fournis.
-    badge: "Exemple",
+    intro: "Réalisation de détections et cartographies de réseaux à Maurice.",
+    prev: "Exemples précédents",
+    next: "Exemples suivants",
     items: [
-      {
-        tag: "Copropriété",
-        title: "Repérage des réseaux d'une résidence avant travaux",
-        text: "Détection électromagnétique et géoradar, marquage au sol et plan des réseaux remis au syndic.",
-        image: "/img/accueil/detection.png",
-      },
-      {
-        tag: "Entreprise TP/VRD",
-        title: "Localisation d'une canalisation avant terrassement",
-        text: "Recherche du tracé et de la profondeur pour sécuriser l'ouverture de tranchée.",
-        image: "/img/detection/observation.png",
-      },
-      {
-        tag: "Gestionnaire de site",
-        title: "Cartographie géoréférencée d'un réseau d'irrigation",
-        text: "Relevé GNSS des vannes, regards et tracés, intégré dans un plan exploitable.",
-        image: "/img/accueil/patrimonial.png",
-      },
+      { title: "Voirie urbaine", text: "Détection et localisation", image: "/img/exemples/voirie-urbaine.jpg" },
+      { title: "Chantier de construction", text: "Repérage des réseaux", image: "/img/exemples/chantier-construction.jpg" },
+      { title: "Résidence", text: "Cartographie des réseaux", image: "/img/exemples/residence.jpg" },
+      { title: "Site industriel", text: "Détection et relevés", image: "/img/exemples/site-industriel.jpg" },
+      { title: "Golf", text: "Réseau d'arrosage", image: "/img/exemples/golf.jpg" },
+      { title: "Hôtel", text: "Cartographie du site", image: "/img/exemples/hotel.jpg" },
     ],
   },
 };
