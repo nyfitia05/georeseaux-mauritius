@@ -1,9 +1,8 @@
 import { Seo } from "@/components/Seo";
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
-import { CheckList, DocPage, ExpertiseHero, PhotoCard, Title, cardBg } from "@/components/Maquette";
+import { CheckList, DocPage, ExpertiseHero, PhotoCard, Title } from "@/components/Maquette";
 import { home, nav, pageCartographie as p, releves } from "@/data/content";
-import { cn } from "@/lib/utils";
 
 // Page refaite d'après la maquette "Cartographie et géoréférencement"
 // (octobre 2026), avec les consignes du client : "Principales applications"
@@ -35,9 +34,7 @@ export default function CartographieReseaux() {
           <Reveal className="flex flex-col">
             <Title title={p.prestations.title} accent={p.prestations.accent} />
             <p className="mt-3 text-lg leading-relaxed text-ink">{p.prestations.text}</p>
-            <div className={cn(cardBg, "mt-5 p-6")}>
-              <CheckList items={p.prestations.items} />
-            </div>
+            <CheckList items={p.prestations.items} className="mt-5" />
           </Reveal>
           <Reveal delay={0.1} className="relative min-h-[300px] overflow-hidden">
             <img

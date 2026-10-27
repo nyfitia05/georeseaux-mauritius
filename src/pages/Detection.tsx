@@ -40,12 +40,8 @@ export default function Detection() {
         <Container className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <Reveal className="flex flex-col gap-5">
             <Title title={p.expertise.title} accent={p.expertise.accent} />
-            <div className={cn(cardBg, "p-6")}>
-              <p className="text-lg leading-relaxed text-ink">{p.expertise.text}</p>
-            </div>
-            <div className={cn(cardBg, "p-6")}>
-              <CheckList items={p.expertise.items} />
-            </div>
+            <p className="text-lg leading-relaxed text-ink">{p.expertise.text}</p>
+            <CheckList items={p.expertise.items} />
           </Reveal>
           <Reveal delay={0.1} className="relative min-h-[280px] overflow-hidden">
             <img
