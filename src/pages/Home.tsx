@@ -265,7 +265,9 @@ function Rapport() {
   );
 }
 
-function Exemples() {
+// Exportée (et non supprimée) pour que la section, masquée pour l'instant,
+// ne casse pas la compilation (noUnusedLocals).
+export function Exemples() {
   const { title, accent, intro, items, prev, next } = accueil.exemples;
   return (
     <section className="bg-[#0f2a5c] py-12 lg:py-14">
@@ -301,7 +303,10 @@ export default function Home() {
       <Methodologie />
       <PlateauTechnique />
       <Rapport />
-      <Exemples />
+      {/* "Exemples d'interventions" masqué en attendant les vrais documents
+         de mission (retour client du 27/10/2026). Pour le réafficher :
+         décommenter la ligne ci-dessous. */}
+      {/* <Exemples /> */}
     </>
   );
 }
