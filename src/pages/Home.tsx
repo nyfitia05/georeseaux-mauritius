@@ -24,8 +24,11 @@ function Expertises() {
         {accueil.expertises.map((item, i) => (
           <Reveal key={item.href} delay={i * 0.08}>
             <article className={cn(card, "flex h-full flex-col sm:flex-row")}>
-              <div className="aspect-[16/10] overflow-hidden sm:aspect-auto sm:w-[44%] sm:flex-none">
+              <div className="relative aspect-[16/10] overflow-hidden sm:aspect-auto sm:w-[44%] sm:flex-none">
                 <img src={item.image} alt="" loading="lazy" className="h-full w-full object-cover" />
+                {item.credit && (
+                  <span className="absolute bottom-0 right-0 bg-black/45 px-1.5 py-0.5 text-[10px] leading-tight text-white/90">{item.credit}</span>
+                )}
               </div>
               <div className="flex flex-1 flex-col p-6 lg:p-7">
                 <h3 className={cn("font-display text-[22px] font-bold leading-tight lg:text-2xl", titleBlue)}>

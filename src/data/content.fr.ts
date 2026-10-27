@@ -264,7 +264,8 @@ export const accueil = {
       title: "Détection et localisation",
       accent: "des réseaux enterrés",
       text: "Identifier et localiser les réseaux existants sur le terrain, sans travaux destructifs.",
-      image: "/img/accueil/carto.png",
+      image: "/img/accueil/detection-localisation.jpg",
+      credit: "Photo : Mds08011 / Wikimedia Commons, CC BY 4.0",
       href: "/detection-reseaux-enterres/",
     },
     {
@@ -272,6 +273,7 @@ export const accueil = {
       accent: "géoréférencement",
       text: "Transformer les relevés terrain en plans numériques précis et exploitables.",
       image: "/img/accueil/patrimonial.png",
+      credit: "",
       href: "/cartographie-reseaux/",
     },
   ],
@@ -368,6 +370,7 @@ export const accueil = {
 // ---------------------------------------------------------------------------
 export const pageDetection = {
   crumb: "Détection et localisation des réseaux enterrés",
+  heroCredit: "Photo : Mds08011 / Wikimedia Commons, CC BY 4.0",
   hero: {
     title: "Détection et localisation",
     accent: "des réseaux enterrés",

@@ -140,7 +140,8 @@ export const accueil: typeof FR.accueil = {
       title: "Detection and location",
       accent: "of underground networks",
       text: "Identify and locate existing networks on site, without destructive works.",
-      image: "/img/accueil/carto.png",
+      image: "/img/accueil/detection-localisation.jpg",
+      credit: "Photo: Mds08011 / Wikimedia Commons, CC BY 4.0",
       href: "/detection-reseaux-enterres/",
     },
     {
@@ -148,6 +149,7 @@ export const accueil: typeof FR.accueil = {
       accent: "georeferencing",
       text: "Turn field surveys into accurate, usable digital plans.",
       image: "/img/accueil/patrimonial.png",
+      credit: "",
       href: "/cartographie-reseaux/",
     },
   ],
@@ -225,6 +227,7 @@ export const accueil: typeof FR.accueil = {
 
 export const pageDetection: typeof FR.pageDetection = {
   crumb: "Detection and location of underground networks",
+  heroCredit: "Photo: Mds08011 / Wikimedia Commons, CC BY 4.0",
   hero: {
     title: "Detection and location",
     accent: "of underground networks",

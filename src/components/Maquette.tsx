@@ -165,6 +165,7 @@ export function ExpertiseHero({
   image,
   imagePosition = "center",
   cta,
+  credit,
 }: {
   title: string;
   accent: string;
@@ -173,6 +174,7 @@ export function ExpertiseHero({
   image: string;
   imagePosition?: string;
   cta: { label: string; href: string };
+  credit?: string;
 }) {
   return (
     <section className="relative flex min-h-[520px] items-center overflow-hidden bg-blue-900 pb-14 pt-28 lg:min-h-[560px]">
@@ -184,6 +186,9 @@ export function ExpertiseHero({
         style={{ objectPosition: imagePosition }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0b1a3d]/95 via-[#0b1a3d]/65 to-transparent" />
+      {credit && (
+        <span className="absolute bottom-1 right-2 z-10 text-[10px] text-white/70">{credit}</span>
+      )}
       <Container className="relative">
         <div className="max-w-3xl">
           <motion.h1
