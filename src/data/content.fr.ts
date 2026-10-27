@@ -264,7 +264,7 @@ export const accueil = {
       title: "Détection et localisation",
       accent: "des réseaux enterrés",
       text: "Identifier et localiser les réseaux existants sur le terrain, sans travaux destructifs.",
-      image: "/img/accueil/hero.png",
+      image: "/img/accueil/carto.png",
       href: "/detection-reseaux-enterres/",
     },
     {
@@ -384,7 +384,7 @@ export const pageDetection = {
       "Méthodes non destructives",
       "Adapté à tous types de sites",
     ],
-    image: "/img/accueil/carto.png",
+    image: "/img/accueil/hero.png",
     imageAlt: "Opérateur GEORESEAUX MAURITIUS avec un géoradar",
   },
   technologies: {

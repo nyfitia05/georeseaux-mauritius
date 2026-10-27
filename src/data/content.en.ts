@@ -140,7 +140,7 @@ export const accueil: typeof FR.accueil = {
       title: "Detection and location",
       accent: "of underground networks",
       text: "Identify and locate existing networks on site, without destructive works.",
-      image: "/img/accueil/hero.png",
+      image: "/img/accueil/carto.png",
       href: "/detection-reseaux-enterres/",
     },
     {
@@ -241,7 +241,7 @@ export const pageDetection: typeof FR.pageDetection = {
       "Non-destructive methods",
       "Suitable for all types of sites",
     ],
-    image: "/img/accueil/carto.png",
+    image: "/img/accueil/hero.png",
     imageAlt: "GEORESEAUX MAURITIUS operator with a ground-penetrating radar",
   },
   technologies: {

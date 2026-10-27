@@ -132,7 +132,6 @@ function Methodologie() {
 
 function Rapport() {
   const { title, accent, intro, items, coverTitle, coverFields, imageAlt } = accueil.rapport;
-  const line = "h-1 rounded bg-blue-100";
   return (
     <section className="bg-white py-12 lg:py-14">
       <Container className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
@@ -169,27 +168,12 @@ function Rapport() {
                 <img src="/img/technologies/georadar.jpg" alt="" className="aspect-[4/3] w-full object-cover" />
               </div>
             </DocPage>
-            <DocPage>
-              <div className={cn(line, "w-2/3")} />
-              <div className={cn(line, "mt-1.5 w-1/2")} />
-              <img src="/img/accueil/patrimonial.png" alt="" className="mt-3 aspect-square w-full object-cover" />
-              <div className="mt-3 flex flex-col gap-1.5">
-                <div className={line} />
-                <div className={cn(line, "w-5/6")} />
-                <div className={cn(line, "w-2/3")} />
-              </div>
+            {/* Pages 2 et 3 : vrais plans GEORESEAUX (public/img/cartographie). */}
+            <DocPage className="p-0">
+              <img src="/img/cartographie/plan-3.jpg" alt="" loading="lazy" className="h-full w-full object-cover" />
             </DocPage>
-            <DocPage>
-              <div className="flex flex-col gap-1.5">
-                <div className={line} />
-                <div className={cn(line, "w-5/6")} />
-                <div className={cn(line, "w-3/4")} />
-              </div>
-              <img src="/img/carte.png" alt="" className="mt-3 aspect-square w-full object-cover" />
-              <div className="mt-3 flex flex-col gap-1.5">
-                <div className={cn(line, "w-4/5")} />
-                <div className={cn(line, "w-1/2")} />
-              </div>
+            <DocPage className="p-0">
+              <img src="/img/cartographie/plan-1.jpg" alt="" loading="lazy" className="h-full w-full object-cover" />
             </DocPage>
           </div>
         </Reveal>

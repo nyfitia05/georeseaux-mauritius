@@ -136,7 +136,14 @@ export function PhotoCard({
 /** Une page de document stylisée (fond blanc, ombre). */
 export function DocPage({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div className={cn("aspect-[1/1.414] overflow-hidden bg-white p-3 shadow-[0_10px_30px_rgba(16,29,64,0.18)] ring-1 ring-blue-100", className)}>
+    <div
+      className={cn(
+        "aspect-[1/1.414] overflow-hidden bg-white shadow-[0_10px_30px_rgba(16,29,64,0.18)] ring-1 ring-blue-100",
+        // marge intérieure par défaut, sauf si la page en précise une (p-0 pour un plan pleine page)
+        !/(^|\s)p-/.test(className ?? "") && "p-3",
+        className,
+      )}
+    >
       {children}
     </div>
   );

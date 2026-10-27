@@ -6,7 +6,7 @@ import { home, nav, pageCartographie as p, releves } from "@/data/content";
 
 // Page refaite d'après la maquette "Cartographie et géoréférencement"
 // (octobre 2026), avec les consignes du client : "Principales applications"
-// retiré, visuel des livrables limité à nos plans (pas d'ordinateur), "Nos
+// retiré, visuel des livrables = nos vrais plans (public/img/cartographie), "Nos
 // interventions récentes" masqué (voir en bas du fichier).
 
 export default function CartographieReseaux() {
@@ -65,19 +65,14 @@ export default function CartographieReseaux() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="relative mx-auto flex max-w-[560px] items-center justify-center py-6" role="img" aria-label={p.livrables.imageAlt}>
-              <DocPage className="w-[52%] -rotate-3 p-2.5">
-                <img src="/img/accueil/patrimonial.png" alt="" className="h-[78%] w-full object-cover" />
-                <div className="mt-2 flex flex-col gap-1">
-                  <div className="h-1 w-3/4 rounded bg-blue-100" />
-                  <div className="h-1 w-1/2 rounded bg-blue-100" />
-                </div>
+              <DocPage className="w-[40%] -rotate-3 p-0">
+                <img src="/img/cartographie/plan-1.jpg" alt="" loading="lazy" className="h-full w-full object-cover" />
               </DocPage>
-              <DocPage className="-ml-[10%] w-[52%] rotate-2 p-2.5">
-                <img src="/img/carte.png" alt="" className="h-[78%] w-full object-cover" />
-                <div className="mt-2 flex flex-col gap-1">
-                  <div className="h-1 w-2/3 rounded bg-blue-100" />
-                  <div className="h-1 w-1/3 rounded bg-blue-100" />
-                </div>
+              <DocPage className="relative z-10 -ml-[8%] w-[40%] p-0">
+                <img src="/img/cartographie/plan-2.jpg" alt="" loading="lazy" className="h-full w-full object-cover" />
+              </DocPage>
+              <DocPage className="-ml-[8%] w-[40%] rotate-3 p-0">
+                <img src="/img/cartographie/plan-4.jpg" alt="" loading="lazy" className="h-full w-full object-cover" />
               </DocPage>
             </div>
           </Reveal>
