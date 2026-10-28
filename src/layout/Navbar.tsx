@@ -18,14 +18,22 @@ const linkBase =
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [expertisesOpen, setExpertisesOpen] = useState(false);
+  const [groupOpen, setGroupOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     setMobileOpen(false);
     setExpertisesOpen(false);
+    setGroupOpen(false);
   }, [location.pathname]);
 
   const expertiseActive = nav.expertises.items.some((item) => location.pathname.startsWith(item.href));
+  const groupLinks = [
+    { label: "Group", href: "https://waterleakgroup.com/" },
+    { label: "Academy", href: "https://waterleakacademy.com/" },
+    { label: "Expert", href: "https://waterleakexpert.com/" },
+    { label: "Monitoring", href: "https://waterleakmonitoring.com/" },
+  ];
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-2.5 z-50">
@@ -83,6 +91,48 @@ export function Navbar() {
                       >
                         {item.label}
                       </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <div
+            className="relative"
+            onMouseEnter={() => setGroupOpen(true)}
+            onMouseLeave={() => setGroupOpen(false)}
+          >
+            <button
+              type="button"
+              onClick={() => setGroupOpen((v) => !v)}
+              aria-expanded={groupOpen}
+              aria-haspopup="true"
+              className={linkBase}
+            >
+              {t("Le groupe", "The group")}
+              <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", groupOpen && "rotate-180")} strokeWidth={2.4} aria-hidden />
+            </button>
+            <AnimatePresence>
+              {groupOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute left-0 top-full pt-2"
+                >
+                  <div className="min-w-[220px] bg-white p-2 shadow-[0_18px_40px_rgba(16,29,64,0.14)]">
+                    {groupLinks.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex whitespace-nowrap px-3.5 py-2.5 font-display text-sm font-medium text-ink transition-colors hover:bg-blue-50 hover:text-blue-600"
+                      >
+                        {item.label}
+                      </a>
                     ))}
                   </div>
                 </motion.div>
@@ -147,6 +197,20 @@ export function Navbar() {
               <Link key={item.href} to={item.href} className="border-b border-blue-50 py-3 pl-9 pr-5 text-[15px] text-ink">
                 {item.label}
               </Link>
+            ))}
+            <span className="px-5 pb-1 pt-3.5 text-xs font-semibold uppercase tracking-[0.08em] text-ink-soft">
+              {t("Le groupe", "The group")}
+            </span>
+            {groupLinks.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-blue-50 py-3 pl-9 pr-5 text-[15px] text-ink"
+              >
+                {item.label}
+              </a>
             ))}
           </motion.nav>
         )}
