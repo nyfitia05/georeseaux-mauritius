@@ -436,6 +436,38 @@ export const pageDetection = {
 };
 
 export const pageCartographie = {
+  // Exemples de livrables (PDF réels, noms de personnes masqués) — public/rapports.
+  realisations: {
+    title: "Exemples de",
+    accent: "livrables",
+    intro: "Quelques plans réels produits sur des chantiers, consultables et téléchargeables.",
+    view: "Voir le plan",
+    download: "Télécharger",
+    close: "Fermer",
+    items: [
+      {
+        tag: "Géodétection",
+        title: "Plan de géodétection – aménagement routier",
+        text: "Détection des réseaux enterrés sur 4 148 m² autour d'un giratoire, avant travaux d'aménagement. Les réseaux détectés sont reportés sur le levé topographique géoréférencé.",
+        image: "/img/realisations/geodetection-montauroux.jpg",
+        pdf: "/rapports/plan-geodetection-montauroux.pdf",
+      },
+      {
+        tag: "Plan de démolition",
+        title: "Plan de démolition – même chantier",
+        text: "Plan des ouvrages à déposer, établi sur le fond topographique et les réseaux relevés. Il permet à l'entreprise de préparer les démolitions en connaissant l'existant.",
+        image: "/img/realisations/demolition-montauroux.jpg",
+        pdf: "/rapports/plan-demolition-montauroux.pdf",
+      },
+      {
+        tag: "Plan projet",
+        title: "Plan projet – même chantier",
+        text: "Plan de l'aménagement projeté (giratoire, bordures, revêtements, mobilier) superposé à l'existant. Le projet est conçu en tenant compte des réseaux localisés.",
+        image: "/img/realisations/projet-montauroux.jpg",
+        pdf: "/rapports/plan-projet-montauroux.pdf",
+      },
+    ],
+  },
   crumb: "Cartographie et géoréférencement",
   hero: {
     title: "Cartographie et",

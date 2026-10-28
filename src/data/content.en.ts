@@ -293,6 +293,37 @@ export const pageDetection: typeof FR.pageDetection = {
 };
 
 export const pageCartographie: typeof FR.pageCartographie = {
+  realisations: {
+    title: "Sample",
+    accent: "deliverables",
+    intro: "A few real plans produced on site, available to view and download.",
+    view: "View the plan",
+    download: "Download",
+    close: "Close",
+    items: [
+      {
+        tag: "Utility detection",
+        title: "Utility detection plan – road works",
+        text: "Detection of underground networks over 4,148 m² around a roundabout, ahead of road works. The detected networks are plotted on the georeferenced topographic survey.",
+        image: "/img/realisations/geodetection-montauroux.jpg",
+        pdf: "/rapports/plan-geodetection-montauroux.pdf",
+      },
+      {
+        tag: "Demolition plan",
+        title: "Demolition plan – same site",
+        text: "Plan of the structures to be removed, drawn on the topographic survey and the located networks. It lets the contractor prepare demolition with full knowledge of what is there.",
+        image: "/img/realisations/demolition-montauroux.jpg",
+        pdf: "/rapports/plan-demolition-montauroux.pdf",
+      },
+      {
+        tag: "Design plan",
+        title: "Design plan – same site",
+        text: "Plan of the planned layout (roundabout, kerbs, surfacing, street furniture) overlaid on the existing site. The design takes the located networks into account.",
+        image: "/img/realisations/projet-montauroux.jpg",
+        pdf: "/rapports/plan-projet-montauroux.pdf",
+      },
+    ],
+  },
   crumb: "Mapping and georeferencing",
   hero: {
     title: "Mapping and",

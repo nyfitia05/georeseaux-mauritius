@@ -3,11 +3,12 @@ import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 import { CheckList, DocPage, ExpertiseHero, PhotoCard, Title } from "@/components/Maquette";
 import { home, nav, pageCartographie as p, releves } from "@/data/content";
+import { Realisations } from "@/sections/Realisations";
 
 // Page refaite d'après la maquette "Cartographie et géoréférencement"
 // (octobre 2026), avec les consignes du client : "Principales applications"
-// retiré, visuel des livrables = nos vrais plans (public/img/cartographie), "Nos
-// interventions récentes" masqué (voir en bas du fichier).
+// retiré, visuel des livrables = nos vrais plans (public/img/cartographie), exemples de
+// livrables réels en bas de page (sections/Realisations.tsx).
 
 export default function CartographieReseaux() {
   return (
@@ -79,9 +80,9 @@ export default function CartographieReseaux() {
         </Container>
       </section>
 
-      {/* "Nos interventions récentes" (maquette) : masqué en attendant les
-         vrais documents de mission (retour client du 27/10/2026). Pour
-         l'activer, réutiliser le carrousel <Exemples /> de pages/Home.tsx. */}
+      {/* Exemples de livrables : vrais plans (PDF dans public/rapports, noms de
+         personnes masqués), consultables en fenêtre et téléchargeables. */}
+      <Realisations {...p.realisations} />
     </>
   );
 }
