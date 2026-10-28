@@ -102,7 +102,7 @@ export function Navbar() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap px-2 py-2.5 font-display text-[13px] font-medium text-ink transition-colors duration-200 hover:text-blue-600"
+              className={linkBase}
             >
               {item.label}
             </a>
