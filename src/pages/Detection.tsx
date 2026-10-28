@@ -24,9 +24,8 @@ export default function Detection() {
         title={p.hero.title}
         accent={p.hero.accent}
         body={p.hero.body}
-        image="/img/accueil/detection-localisation.jpg"
-        imagePosition="center 12%"
-        credit={p.heroCredit}
+        image="/img/accueil/detection-localisation.jpeg"
+        imagePosition="center 6%"
         cta={{ label: home.hero.cta, href: nav.devisCta.href }}
       />
 

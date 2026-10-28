@@ -140,8 +140,8 @@ export const accueil: typeof FR.accueil = {
       title: "Detection and location",
       accent: "of underground networks",
       text: "Identify and locate existing networks on site, without destructive works.",
-      image: "/img/accueil/detection-localisation.jpg",
-      credit: "Photo: Mds08011 / Wikimedia Commons, CC BY 4.0",
+      image: "/img/accueil/detection-localisation.jpeg",
+      credit: "",
       href: "/detection-reseaux-enterres/",
     },
     {
@@ -227,7 +227,6 @@ export const accueil: typeof FR.accueil = {
 
 export const pageDetection: typeof FR.pageDetection = {
   crumb: "Detection and location of underground networks",
-  heroCredit: "Photo: Mds08011 / Wikimedia Commons, CC BY 4.0",
   hero: {
     title: "Detection and location",
     accent: "of underground networks",

@@ -264,8 +264,8 @@ export const accueil = {
       title: "Détection et localisation",
       accent: "des réseaux enterrés",
       text: "Identifier et localiser les réseaux existants sur le terrain, sans travaux destructifs.",
-      image: "/img/accueil/detection-localisation.jpg",
-      credit: "Photo : Mds08011 / Wikimedia Commons, CC BY 4.0",
+      image: "/img/accueil/detection-localisation.jpeg",
+      credit: "",
       href: "/detection-reseaux-enterres/",
     },
     {
@@ -370,7 +370,6 @@ export const accueil = {
 // ---------------------------------------------------------------------------
 export const pageDetection = {
   crumb: "Détection et localisation des réseaux enterrés",
-  heroCredit: "Photo : Mds08011 / Wikimedia Commons, CC BY 4.0",
   hero: {
     title: "Détection et localisation",
     accent: "des réseaux enterrés",
