@@ -2,8 +2,8 @@
 // N'invente aucun texte marketing ici : tout ce qui est affiché vient du PDF.
 
 export const CONTACT_EMAIL = "admin@waterleakgroup.com";
-export const CONTACT_PHONE = "04 93 69 59 62";
-export const CONTACT_PHONE_HREF = "+33493695962";
+export const CONTACT_PHONE = "+230 650 0707";
+export const CONTACT_PHONE_HREF = "+2306500707";
 
 export const LOGO_COLOR_URL = "https://sosfuitedeau.com/wp-content/uploads/2026/09/1-100.jpg";
 export const LOGO_WHITE_URL = "https://sosfuitedeau.com/wp-content/uploads/2026/09/Blanc@2x.png";

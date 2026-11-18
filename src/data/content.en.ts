@@ -11,8 +11,8 @@ export const brand: typeof FR.brand = {
   tagline: "DETECT • LOCATE • MAP • MONITOR",
   signature: "Know today. Secure tomorrow.",
   signatureCaps: "KNOW TODAY. SECURE TOMORROW.",
-  phone: "+230 5792 8639",
-  phoneHref: "tel:+23057928639",
+  phone: "+230 650 0707",
+  phoneHref: "tel:+2306500707",
   email: "admin@waterleakgroup.com",
   emailHref: "mailto:admin@waterleakgroup.com",
 };
